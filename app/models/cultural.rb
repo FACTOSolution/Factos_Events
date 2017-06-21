@@ -1,0 +1,2 @@
+class Cultural < Event
+end
