@@ -2,20 +2,44 @@ require 'rails_helper'
 
 RSpec.describe EventController, type: :controller do
   describe "GET #index" do
-    let(:event) { create(:event) }
+    context "Return all the events" do
+      let(:event) { create(:event) }
 
-    before { get :index}
+      before { get :index }
 
-    it "assigns @events properly" do
-      expect(assigns(:events)).to eq([event])
+      it "assigns @events properly" do
+        expect(assigns(:events)).to eq([event])
+      end
+
+      it "renders the index view" do
+        expect(response).to render_template(:index)
+      end
+
+      it "returns a successful response" do
+        expect(response).to be_success
+      end
     end
 
-    it "renders the index view" do
-      expect(response).to render_template(:index)
+    context "Return just the academic ones" do
+      let(:academic_event) { create(:academic_event) }
+      let(:cultural_event) { create(:cultural_event) }
+
+      before { get :index , params: { type: 'Academic'} }
+
+      it "returns only academic events" do
+        expect(assigns(:events)).to_not eq([cultural_event])
+      end
     end
 
-    it "returns a successful response" do
-      expect(response).to be_success
+    context "Return just the cultural ones" do
+      let(:academic_event) { create(:academic_event) }
+      let(:cultural_event) { create(:cultural_event) }
+
+      before { get :index , params: { type: 'Cultural'} }
+
+      it "returns only cultural events" do
+        expect(assigns(:events)).to_not eq([academic_event])
+      end
     end
   end
 

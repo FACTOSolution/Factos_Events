@@ -11,6 +11,14 @@ FactoryGirl.define do
     f.cover { fixture_file_upload("/home/pedrohenique/Transferências/gfallen.jpeg", 'image/jpeg') }
   end
 
+  factory :academic_event, parent: :event, class: Academic do |f|
+    f.type 'Academic'
+  end
+
+  factory :cultural_event, parent: :event, class: Cultural do |f|
+    f.type 'Cultural'
+  end
+
   factory :invalid_event, parent: :event do |f|
     f.name nil
   end
