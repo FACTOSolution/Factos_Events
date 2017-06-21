@@ -1,0 +1,2 @@
+class Cutural < Event
+end
