@@ -14101,3 +14101,675 @@ Completed 200 OK in 10ms (Views: 1.3ms | ActiveRecord: 0.8ms)
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#index as HTML
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.16s)
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:51.613206"], ["updated_at", "2017-06-22 23:07:51.613206"], ["name", "Anissa Bogan"], ["description", "Facere enim quia veniam et ea repudiandae repellat consequatur."], ["value_in_real", "29.48"], ["contact", "victoria@halvorson.info"], ["cover_data", "{\"id\":\"bb95a17ef5c9186f0098d80fdf787d76.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Huels Spur"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[547] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:51.618663"], ["cover_data", "{\"id\":\"30abcc4af1067981f4b1a165c6652714.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 547]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#index as HTML
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#index as HTML
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#index as HTML
+  Parameters: {"type"=>"Academic"}
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+STORE[cache] ImageUploader[:cover] Cultural 1 file (0.0s)
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:51.660739"], ["updated_at", "2017-06-22 23:07:51.660739"], ["name", "Dusty Spinka"], ["description", "Aliquam aut quos reiciendis qui odio quia voluptas."], ["value_in_real", "18.41"], ["contact", "magnolia_terry@stark.info"], ["cover_data", "{\"id\":\"2b303450f82c7397d7eafd426d949a87.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Wolff Course"], ["type", "Cultural"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Cultural[548] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:51.665122"], ["cover_data", "{\"id\":\"8e779f989f159e82d861f173931e02dc.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 548]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#index as HTML
+  Parameters: {"type"=>"Cultural"}
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.042849"], ["updated_at", "2017-06-22 23:07:52.042849"], ["name", "Lamar Stoltenberg"], ["description", "Quibusdam ea incidunt explicabo optio laboriosam."], ["value_in_real", "57.59"], ["contact", "desiree@marks.io"], ["cover_data", "{\"id\":\"eebcd9dcfd9a2bf46d47e49a5813f2ce.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-21 00:00:00"], ["address", "Sonia Center"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[549] 1 file (0.0s)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.047240"], ["cover_data", "{\"id\":\"c89e1e574bd24088fbfbb9626dafe6b7.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 549]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.062833"], ["updated_at", "2017-06-22 23:07:52.062833"], ["name", "Ms. Leo Nicolas"], ["description", "Odio qui facilis aliquid in."], ["value_in_real", "21.81"], ["contact", "asha_considine@damorebrekke.name"], ["cover_data", "{\"id\":\"6eab4228a545b7fcea52d5ddeb53b251.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Daugherty Viaduct"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[550] 1 file (0.0s)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.067071"], ["cover_data", "{\"id\":\"2ded910207aa7023ce879293b980b0a9.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 550]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#show as HTML
+  Parameters: {"id"=>"550"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 550], ["LIMIT", 1]]
+  Rendering event/show.html.erb within layouts/application
+  Rendered event/show.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.085229"], ["updated_at", "2017-06-22 23:07:52.085229"], ["name", "Myron Harber"], ["description", "Perspiciatis vero beatae iure atque voluptatem sit voluptatem aut."], ["value_in_real", "49.67"], ["contact", "elvis@muller.com"], ["cover_data", "{\"id\":\"ea307c1ca3d92fce9bbcbef6bc3377c5.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-21 00:00:00"], ["address", "Purdy Stream"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[551] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.089743"], ["cover_data", "{\"id\":\"b2d63329e5c49cfd76b0d29e898aa7a2.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 551]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#show as HTML
+  Parameters: {"id"=>"551"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 551], ["LIMIT", 1]]
+  Rendering event/show.html.erb within layouts/application
+  Rendered event/show.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#new as HTML
+  Rendering event/new.html.erb within layouts/application
+  Rendered event/new.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#new as HTML
+  Rendering event/new.html.erb within layouts/application
+  Rendered event/new.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+Processing by EventController#create as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-22", "name"=>"Jordan O'Hara", "description"=>"Nulla consequatur totam occaecati sunt aliquam sint aut ipsam.", "value_in_real"=>"59.78", "address"=>"Alfred Mall", "contact"=>"theo@batzgerhold.name", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000005dc34a8 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-16728-g896j3.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}}
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.134370"], ["updated_at", "2017-06-22 23:07:52.134370"], ["name", "Jordan O'Hara"], ["description", "Nulla consequatur totam occaecati sunt aliquam sint aut ipsam."], ["value_in_real", "59.78"], ["contact", "theo@batzgerhold.name"], ["cover_data", "{\"id\":\"36f49353f7b4fd776154e73609a6bcd9.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Alfred Mall"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[552] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.138568"], ["cover_data", "{\"id\":\"0d5b1e7c3e13d98bade788356a390472.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 552]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/academic/552
+Completed 302 Found in 14ms (ActiveRecord: 1.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#create as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-22", "name"=>"Jeff Hayes", "description"=>"Unde illum odit vitae et accusamus non non.", "value_in_real"=>"56.11", "address"=>"Zoila Ports", "contact"=>"lennie@grimes.info", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000005c7e390 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-16728-yk8tln.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}}
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.158395"], ["updated_at", "2017-06-22 23:07:52.158395"], ["name", "Jeff Hayes"], ["description", "Unde illum odit vitae et accusamus non non."], ["value_in_real", "56.11"], ["contact", "lennie@grimes.info"], ["cover_data", "{\"id\":\"09d6c12a388018783a4ce0a3c32ac057.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Zoila Ports"], ["type", "Academic"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[553] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.162470"], ["cover_data", "{\"id\":\"dedfec5eb5a08b780fe671710dadc8b1.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 553]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/academic/553
+Completed 302 Found in 14ms (ActiveRecord: 1.4ms)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+Processing by EventController#create as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-21", "name"=>"", "description"=>"Facere harum et nam enim est ea et.", "value_in_real"=>"93.09", "address"=>"Boehm Plaza", "contact"=>"marlene.cremin@hintz.com", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000005b95a78 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-16728-k1lhv8.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}}
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering event/new.html.erb within layouts/application
+  Rendered event/new.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#create as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-22", "name"=>"", "description"=>"Unde repellendus et tenetur tempore corporis cumque.", "value_in_real"=>"47.47", "address"=>"Beer Knolls", "contact"=>"emerald_corkery@schulistblick.name", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000005b0eb40 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-16728-103ev24.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}}
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering event/new.html.erb within layouts/application
+  Rendered event/new.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.210832"], ["updated_at", "2017-06-22 23:07:52.210832"], ["name", "Keegan Schuster"], ["description", "Atque pariatur voluptas et harum voluptate ratione."], ["value_in_real", "57.63"], ["contact", "anahi.moore@weber.name"], ["cover_data", "{\"id\":\"6731d9c7e70584734e06dc9c254377da.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Kenyatta Fort"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[554] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.215076"], ["cover_data", "{\"id\":\"ab257c599dbaf19fe3085a7855dab767.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 554]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+Processing by EventController#destroy as HTML
+  Parameters: {"id"=>"554"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 554], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."type" IN ('Academic') AND "events"."id" = $1[0m  [["id", 554]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+DELETE[destroy] ImageUploader[:cover] Academic[554] 1 file (0.0s)
+Redirected to http://test.host/event/554
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.234891"], ["updated_at", "2017-06-22 23:07:52.234891"], ["name", "Ciara Gislason DDS"], ["description", "Nemo voluptate officia voluptas."], ["value_in_real", "67.96"], ["contact", "rocio@dubuque.co"], ["cover_data", "{\"id\":\"57732b06721a09ff3feb61b059f0a729.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Jesse Manor"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[555] 1 file (0.0s)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.238872"], ["cover_data", "{\"id\":\"f533fa2b4877cb99e6d6a683775a6886.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 555]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#destroy as HTML
+  Parameters: {"id"=>"555"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 555], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."type" IN ('Academic') AND "events"."id" = $1[0m  [["id", 555]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+DELETE[destroy] ImageUploader[:cover] Academic[555] 1 file (0.0s)
+Redirected to http://test.host/event/555
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.257214"], ["updated_at", "2017-06-22 23:07:52.257214"], ["name", "Alexander Pierce"], ["description", "Corrupti adipisci voluptas cupiditate."], ["value_in_real", "86.31"], ["contact", "mail@email.com"], ["cover_data", "{\"id\":\"ca45f1a006e50e37c156fbb8c267d7b7.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-21 00:00:00"], ["address", "Hilpert Village"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[556] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.261406"], ["cover_data", "{\"id\":\"23b2e3bbf4e8bdb352b3908740168144.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 556]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#update as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-22", "name"=>"Ashley Wisozk", "description"=>"Quia omnis pariatur voluptas est veniam.", "value_in_real"=>"86.01", "address"=>"Elmira Stream", "contact"=>"raymundo@schmidt.biz", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000005858248 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-16728-1kuta4u.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}, "id"=>"556"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 556], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+STORE[cache] ImageUploader[:cover] Academic[556] 1 file (0.0s)
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "events" SET "date" = $1, "name" = $2, "description" = $3, "cover_data" = $4, "value_in_real" = $5, "address" = $6, "contact" = $7, "updated_at" = $8 WHERE "events"."id" = $9[0m  [["date", "2017-06-22 00:00:00"], ["name", "Ashley Wisozk"], ["description", "Quia omnis pariatur voluptas est veniam."], ["cover_data", "{\"id\":\"e6eb5fdfce5cf6a008d044c9bb5ef1bf.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["value_in_real", "86.01"], ["address", "Elmira Stream"], ["contact", "raymundo@schmidt.biz"], ["updated_at", "2017-06-22 23:07:52.276263"], ["id", 556]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+DELETE[replace] ImageUploader[:cover] Academic[556] 1 file (0.0s)
+STORE[store] ImageUploader[:cover] Academic[556] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "cover_data" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["cover_data", "{\"id\":\"a60d754e75a5c4fcca1f980ab9e85714.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["updated_at", "2017-06-22 23:07:52.281964"], ["id", 556]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/academic/556
+Completed 302 Found in 16ms (ActiveRecord: 2.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.292761"], ["updated_at", "2017-06-22 23:07:52.292761"], ["name", "Alexander Pierce"], ["description", "Ex nam quasi aliquam et doloribus id."], ["value_in_real", "18.22"], ["contact", "mail@email.com"], ["cover_data", "{\"id\":\"adbaf0517508a5f2f612ce16778b49fc.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-21 00:00:00"], ["address", "Hane Manors"], ["type", "Academic"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[557] 1 file (0.0s)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.296877"], ["cover_data", "{\"id\":\"746b9d25d8a652b98f3c220374943bae.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 557]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#update as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-22", "name"=>"Larry", "description"=>"Aut quos ad incidunt.", "value_in_real"=>"69.85", "address"=>"Trantow Gardens", "contact"=>"lail@email.com", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000000566b2c8 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-16728-1fx7gyl.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}, "id"=>"557"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 557], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+STORE[cache] ImageUploader[:cover] Academic[557] 1 file (0.0s)
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "date" = $1, "name" = $2, "description" = $3, "cover_data" = $4, "value_in_real" = $5, "address" = $6, "contact" = $7, "updated_at" = $8 WHERE "events"."id" = $9[0m  [["date", "2017-06-22 00:00:00"], ["name", "Larry"], ["description", "Aut quos ad incidunt."], ["cover_data", "{\"id\":\"2544a0c15435e8dfaaa878386bf361ae.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["value_in_real", "69.85"], ["address", "Trantow Gardens"], ["contact", "lail@email.com"], ["updated_at", "2017-06-22 23:07:52.311860"], ["id", 557]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+DELETE[replace] ImageUploader[:cover] Academic[557] 1 file (0.0s)
+STORE[store] ImageUploader[:cover] Academic[557] 1 file (0.0s)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "cover_data" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["cover_data", "{\"id\":\"036a67d3110526dfe651a58dd181b833.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["updated_at", "2017-06-22 23:07:52.316876"], ["id", 557]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/academic/557
+Completed 302 Found in 15ms (ActiveRecord: 1.8ms)
+  [1m[36mAcademic Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" IN ('Academic') AND "events"."id" = $1 LIMIT $2[0m  [["id", 557], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.329979"], ["updated_at", "2017-06-22 23:07:52.329979"], ["name", "Alexander Pierce"], ["description", "Explicabo veniam quas ullam consequatur."], ["value_in_real", "60.81"], ["contact", "mail@email.com"], ["cover_data", "{\"id\":\"bfe4fcdde1faef87068036fcc2a47593.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Volkman Place"], ["type", "Academic"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[558] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.334041"], ["cover_data", "{\"id\":\"ebae5c805dee2b5ea22f61ec43c24d34.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 558]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#update as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-20", "name"=>"Fred Brown", "description"=>"Et quia id ea soluta et dolorem saepe.", "value_in_real"=>"30.72", "address"=>"Schulist Harbor", "contact"=>"ethan@luettgenflatley.info", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x000000053e2150 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-16728-15ila9r.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}, "id"=>"558"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 558], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+STORE[cache] ImageUploader[:cover] Academic[558] 1 file (0.0s)
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "date" = $1, "name" = $2, "description" = $3, "cover_data" = $4, "value_in_real" = $5, "address" = $6, "contact" = $7, "updated_at" = $8 WHERE "events"."id" = $9[0m  [["date", "2017-06-20 00:00:00"], ["name", "Fred Brown"], ["description", "Et quia id ea soluta et dolorem saepe."], ["cover_data", "{\"id\":\"eecb0003091298e60b3f33395f0324b9.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["value_in_real", "30.72"], ["address", "Schulist Harbor"], ["contact", "ethan@luettgenflatley.info"], ["updated_at", "2017-06-22 23:07:52.350762"], ["id", 558]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+DELETE[replace] ImageUploader[:cover] Academic[558] 1 file (0.0s)
+STORE[store] ImageUploader[:cover] Academic[558] 1 file (0.0s)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "cover_data" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["cover_data", "{\"id\":\"3f9b9df34799371a3ff19620589de2ba.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["updated_at", "2017-06-22 23:07:52.355700"], ["id", 558]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/academic/558
+Completed 302 Found in 16ms (ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.367043"], ["updated_at", "2017-06-22 23:07:52.367043"], ["name", "Alexander Pierce"], ["description", "Rerum tempore sit quo."], ["value_in_real", "20.86"], ["contact", "mail@email.com"], ["cover_data", "{\"id\":\"bb03a08a52977e2227db2ac42ba3ae83.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-20 00:00:00"], ["address", "Sigmund Prairie"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[559] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.371649"], ["cover_data", "{\"id\":\"02e13bc81936628ec6c95927fdd1f1de.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 559]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#update as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-22", "name"=>"", "description"=>"Rerum consequatur mollitia quasi porro suscipit dolorem debitis.", "value_in_real"=>"97.89", "address"=>"Collier Ways", "contact"=>"nickolas.dare@osinski.name", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x000000052851b8 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-16728-1jmjbpu.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}, "id"=>"559"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 559], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+STORE[cache] ImageUploader[:cover] Academic[559] 1 file (0.0s)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering event/edit.html.erb within layouts/application
+  Rendered event/edit.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 10ms (Views: 2.2ms | ActiveRecord: 0.7ms)
+  [1m[36mAcademic Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" IN ('Academic') AND "events"."id" = $1 LIMIT $2[0m  [["id", 559], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:07:52.399843"], ["updated_at", "2017-06-22 23:07:52.399843"], ["name", "Alexander Pierce"], ["description", "Rerum aperiam aut excepturi numquam iure."], ["value_in_real", "32.47"], ["contact", "mail@email.com"], ["cover_data", "{\"id\":\"c2f60cc17cb95c19bc487d3d078db5a6.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Emory View"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[560] 1 file (0.0s)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:07:52.405069"], ["cover_data", "{\"id\":\"affd45609fb26bac920e069d2aef425e.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 560]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#update as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-20", "name"=>"", "description"=>"Quidem ex aliquid consectetur pariatur.", "value_in_real"=>"96.12", "address"=>"Shad Highway", "contact"=>"micheal_bogan@ruecker.io", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000005172000 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-16728-1mj6ylu.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}, "id"=>"560"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 560], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+STORE[cache] ImageUploader[:cover] Academic[560] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering event/edit.html.erb within layouts/application
+  Rendered event/edit.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#index as HTML
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.01s)
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:16.993316"], ["updated_at", "2017-06-22 23:09:16.993316"], ["name", "Irwin Johnson DVM"], ["description", "Labore rem ut quo perferendis et."], ["value_in_real", "13.46"], ["contact", "marta_smitham@langworth.co"], ["cover_data", "{\"id\":\"640adeaa03a3e4aea03111cceb9136ae.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Mertz Skyway"], ["type", "Academic"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[561] 1 file (0.0s)
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.002401"], ["cover_data", "{\"id\":\"1d937f0ba7b5bff14a4f07c339841181.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 561]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#index as HTML
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#index as HTML
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#index as HTML
+  Parameters: {"type"=>"Academic"}
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+STORE[cache] ImageUploader[:cover] Cultural 1 file (0.0s)
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.049978"], ["updated_at", "2017-06-22 23:09:17.049978"], ["name", "Ivory Baumbach III"], ["description", "Vitae ipsa distinctio neque reiciendis sint id iure."], ["value_in_real", "17.35"], ["contact", "hunter@hand.name"], ["cover_data", "{\"id\":\"f33faf469750f7c87f9526be5e1d2487.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-21 00:00:00"], ["address", "Tom Roads"], ["type", "Cultural"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Cultural[562] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.054435"], ["cover_data", "{\"id\":\"85e38e3c5eb72588d8a257be8edd32ca.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 562]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."type" = $1[0m  [["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#index as HTML
+  Parameters: {"type"=>"Cultural"}
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.070349"], ["updated_at", "2017-06-22 23:09:17.070349"], ["name", "Ahmed Schmeler"], ["description", "Nam porro qui dolorem incidunt debitis quae eligendi impedit."], ["value_in_real", "67.65"], ["contact", "aiden@fadel.com"], ["cover_data", "{\"id\":\"bef9ce014f654e07671a9c3316003b42.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-21 00:00:00"], ["address", "Xander Mountain"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[563] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.075625"], ["cover_data", "{\"id\":\"295c1375e876ccb148c87f619d5027b6.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 563]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."type" = $1[0m  [["type", "Cultural"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.087942"], ["updated_at", "2017-06-22 23:09:17.087942"], ["name", "Rebeka Schulist PhD"], ["description", "Quo voluptates animi cum quisquam qui."], ["value_in_real", "25.23"], ["contact", "amya.gaylord@kuhlman.com"], ["cover_data", "{\"id\":\"aa2f63a7787f89bc1a1901262da84488.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Dooley Locks"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[564] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.092474"], ["cover_data", "{\"id\":\"c22de20781e651fc257e700ecb0a6e3a.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 564]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#show as HTML
+  Parameters: {"id"=>"564"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 564], ["LIMIT", 1]]
+  Rendering event/show.html.erb within layouts/application
+  Rendered event/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.110972"], ["updated_at", "2017-06-22 23:09:17.110972"], ["name", "Dr. Alexandria Satterfield"], ["description", "Quis laborum magnam enim tenetur et aliquid itaque."], ["value_in_real", "78.27"], ["contact", "nayeli_emard@feeneyupton.name"], ["cover_data", "{\"id\":\"af8978adb928e966c8d9cce582ef0cb7.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-21 00:00:00"], ["address", "Barton Knolls"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[565] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.115646"], ["cover_data", "{\"id\":\"c0b10a57d3b9bdc95dfced2eb82b1b00.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 565]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#show as HTML
+  Parameters: {"id"=>"565"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 565], ["LIMIT", 1]]
+  Rendering event/show.html.erb within layouts/application
+  Rendered event/show.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#new as HTML
+  Rendering event/new.html.erb within layouts/application
+  Rendered event/new.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#new as HTML
+  Rendering event/new.html.erb within layouts/application
+  Rendered event/new.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+Processing by EventController#create as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-21", "name"=>"Matt Bruen", "description"=>"Est voluptas culpa maxime tempora dolorem est impedit.", "value_in_real"=>"97.16", "address"=>"Fritsch Ramp", "contact"=>"rudolph_homenick@littel.com", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000005c39970 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-17208-cy50jh.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}}
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.158794"], ["updated_at", "2017-06-22 23:09:17.158794"], ["name", "Matt Bruen"], ["description", "Est voluptas culpa maxime tempora dolorem est impedit."], ["value_in_real", "97.16"], ["contact", "rudolph_homenick@littel.com"], ["cover_data", "{\"id\":\"6dd3d7911a8c9295dddc75a53bc4dc9c.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-21 00:00:00"], ["address", "Fritsch Ramp"], ["type", "Academic"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[566] 1 file (0.0s)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.163051"], ["cover_data", "{\"id\":\"43b5f4abd5d516a58d3ef04baa668088.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 566]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/academic/566
+Completed 302 Found in 16ms (ActiveRecord: 1.7ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#create as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-20", "name"=>"Jasmin Rippin IV", "description"=>"Dolorem ut voluptas nobis.", "value_in_real"=>"17.98", "address"=>"Devon Spring", "contact"=>"chance.stark@mante.info", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000005a8bd08 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-17208-1j7d9q.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}}
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.184974"], ["updated_at", "2017-06-22 23:09:17.184974"], ["name", "Jasmin Rippin IV"], ["description", "Dolorem ut voluptas nobis."], ["value_in_real", "17.98"], ["contact", "chance.stark@mante.info"], ["cover_data", "{\"id\":\"7b453ff5105808905897c3690b51b6ac.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-20 00:00:00"], ["address", "Devon Spring"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[567] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.189509"], ["cover_data", "{\"id\":\"a954f65086c563a933378124afe794f8.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 567]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/academic/567
+Completed 302 Found in 13ms (ActiveRecord: 1.8ms)
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+Processing by EventController#create as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-20", "name"=>"", "description"=>"Cupiditate et voluptas quis soluta est ut.", "value_in_real"=>"36.67", "address"=>"Mia Union", "contact"=>"cristobal.towne@pacocha.info", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x000000059aef98 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-17208-1sine9m.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}}
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering event/new.html.erb within layouts/application
+  Rendered event/new.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by EventController#create as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-22", "name"=>"", "description"=>"Et rem non aut qui a omnis sit in.", "value_in_real"=>"49.53", "address"=>"Borer Stravenue", "contact"=>"mozelle.reilly@bashirian.io", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x000000058d8a60 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-17208-1oa6btt.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}}
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering event/new.html.erb within layouts/application
+  Rendered event/new.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.242512"], ["updated_at", "2017-06-22 23:09:17.242512"], ["name", "Kristoffer Collins DVM"], ["description", "Qui consequatur enim sunt corporis beatae non sequi."], ["value_in_real", "64.59"], ["contact", "minerva_mayert@dibbert.co"], ["cover_data", "{\"id\":\"c5810faaca5bc59cfb22bd650f68f7ce.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-20 00:00:00"], ["address", "Champlin Rapids"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[568] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.246849"], ["cover_data", "{\"id\":\"28c1bbe1850332337b579b1acdd42e61.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 568]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+Processing by EventController#destroy as HTML
+  Parameters: {"id"=>"568"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 568], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."type" IN ('Academic') AND "events"."id" = $1[0m  [["id", 568]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+DELETE[destroy] ImageUploader[:cover] Academic[568] 1 file (0.0s)
+Redirected to http://test.host/event/568
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.267109"], ["updated_at", "2017-06-22 23:09:17.267109"], ["name", "Hiram McKenzie"], ["description", "Dolore sit in earum atque dolor magni eius."], ["value_in_real", "63.95"], ["contact", "rosalyn_lakin@goodwin.org"], ["cover_data", "{\"id\":\"d4f2d575ce9e1b9deef902a8d4626d12.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Arnold Drives"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[569] 1 file (0.0s)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.271345"], ["cover_data", "{\"id\":\"903cd80197244ecbe2e2fed44b9eecf5.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 569]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#destroy as HTML
+  Parameters: {"id"=>"569"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 569], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."type" IN ('Academic') AND "events"."id" = $1[0m  [["id", 569]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+DELETE[destroy] ImageUploader[:cover] Academic[569] 1 file (0.0s)
+Redirected to http://test.host/event/569
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.288707"], ["updated_at", "2017-06-22 23:09:17.288707"], ["name", "Alexander Pierce"], ["description", "Cum molestiae enim ab."], ["value_in_real", "39.28"], ["contact", "mail@email.com"], ["cover_data", "{\"id\":\"0bc4960a30a22557d2e38612a71f72fd.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-20 00:00:00"], ["address", "Will Walks"], ["type", "Academic"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[570] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.293319"], ["cover_data", "{\"id\":\"574de08ba5a97319ae8eb6d3fbdb8728.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 570]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#update as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-21", "name"=>"Adrain McClure I", "description"=>"Sed eum debitis architecto qui quisquam aspernatur recusandae.", "value_in_real"=>"18.57", "address"=>"Murray Orchard", "contact"=>"crystal_harris@balistreri.info", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000000564c558 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-17208-1h6ikjc.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}, "id"=>"570"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 570], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+STORE[cache] ImageUploader[:cover] Academic[570] 1 file (0.0s)
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "date" = $1, "name" = $2, "description" = $3, "cover_data" = $4, "value_in_real" = $5, "address" = $6, "contact" = $7, "updated_at" = $8 WHERE "events"."id" = $9[0m  [["date", "2017-06-21 00:00:00"], ["name", "Adrain McClure I"], ["description", "Sed eum debitis architecto qui quisquam aspernatur recusandae."], ["cover_data", "{\"id\":\"bcd490d425b625d50cb0d34bd6b550fc.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["value_in_real", "18.57"], ["address", "Murray Orchard"], ["contact", "crystal_harris@balistreri.info"], ["updated_at", "2017-06-22 23:09:17.309723"], ["id", 570]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+DELETE[replace] ImageUploader[:cover] Academic[570] 1 file (0.0s)
+STORE[store] ImageUploader[:cover] Academic[570] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "cover_data" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["cover_data", "{\"id\":\"06d014143216cd2d2040a71a026ea319.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["updated_at", "2017-06-22 23:09:17.315062"], ["id", 570]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/academic/570
+Completed 302 Found in 16ms (ActiveRecord: 2.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.327275"], ["updated_at", "2017-06-22 23:09:17.327275"], ["name", "Alexander Pierce"], ["description", "Perferendis voluptatem debitis molestiae quo numquam nesciunt."], ["value_in_real", "94.93"], ["contact", "mail@email.com"], ["cover_data", "{\"id\":\"1b22efb801981562efa9000d988eb714.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-20 00:00:00"], ["address", "Marquardt Route"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[571] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.331906"], ["cover_data", "{\"id\":\"f2afe79b4298b56520f33a4a7ef44813.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 571]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#update as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-22", "name"=>"Larry", "description"=>"Accusantium rerum suscipit non vitae rem maxime impedit eos.", "value_in_real"=>"93.47", "address"=>"Brisa Drive", "contact"=>"lail@email.com", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x000000054b7e40 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-17208-1nie3zl.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}, "id"=>"571"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 571], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+STORE[cache] ImageUploader[:cover] Academic[571] 1 file (0.0s)
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "date" = $1, "name" = $2, "description" = $3, "cover_data" = $4, "value_in_real" = $5, "address" = $6, "contact" = $7, "updated_at" = $8 WHERE "events"."id" = $9[0m  [["date", "2017-06-22 00:00:00"], ["name", "Larry"], ["description", "Accusantium rerum suscipit non vitae rem maxime impedit eos."], ["cover_data", "{\"id\":\"337e37cdec82c075178cd44a04e75ec3.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["value_in_real", "93.47"], ["address", "Brisa Drive"], ["contact", "lail@email.com"], ["updated_at", "2017-06-22 23:09:17.346753"], ["id", 571]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+DELETE[replace] ImageUploader[:cover] Academic[571] 1 file (0.0s)
+STORE[store] ImageUploader[:cover] Academic[571] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "cover_data" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["cover_data", "{\"id\":\"979d1174b25d1dc62d3e0241140926ab.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["updated_at", "2017-06-22 23:09:17.352015"], ["id", 571]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/academic/571
+Completed 302 Found in 15ms (ActiveRecord: 2.1ms)
+  [1m[36mAcademic Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" IN ('Academic') AND "events"."id" = $1 LIMIT $2[0m  [["id", 571], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.365208"], ["updated_at", "2017-06-22 23:09:17.365208"], ["name", "Alexander Pierce"], ["description", "Corporis et eum quia tenetur."], ["value_in_real", "74.67"], ["contact", "mail@email.com"], ["cover_data", "{\"id\":\"c7f914d4ff4c9d10c6405ba8a39a7754.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Schuyler Valleys"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[572] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.369326"], ["cover_data", "{\"id\":\"b8be652e2f02542a75bbc343ab62ddae.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 572]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#update as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-20", "name"=>"Ms. Sarah Durgan", "description"=>"Voluptate ex tenetur nam quia magnam vitae beatae.", "value_in_real"=>"92.28", "address"=>"Abbott Throughway", "contact"=>"zane_moore@rogahn.com", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000005302000 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-17208-rpemot.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}, "id"=>"572"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 572], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+STORE[cache] ImageUploader[:cover] Academic[572] 1 file (0.0s)
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "events" SET "date" = $1, "name" = $2, "description" = $3, "cover_data" = $4, "value_in_real" = $5, "address" = $6, "contact" = $7, "updated_at" = $8 WHERE "events"."id" = $9[0m  [["date", "2017-06-20 00:00:00"], ["name", "Ms. Sarah Durgan"], ["description", "Voluptate ex tenetur nam quia magnam vitae beatae."], ["cover_data", "{\"id\":\"460ca5631a28884d89b7c2f08ffd331e.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["value_in_real", "92.28"], ["address", "Abbott Throughway"], ["contact", "zane_moore@rogahn.com"], ["updated_at", "2017-06-22 23:09:17.384633"], ["id", 572]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+DELETE[replace] ImageUploader[:cover] Academic[572] 1 file (0.0s)
+STORE[store] ImageUploader[:cover] Academic[572] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "cover_data" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["cover_data", "{\"id\":\"99a2adb69f6f7379a9744e81148ae28f.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["updated_at", "2017-06-22 23:09:17.391409"], ["id", 572]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/academic/572
+Completed 302 Found in 17ms (ActiveRecord: 2.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.403422"], ["updated_at", "2017-06-22 23:09:17.403422"], ["name", "Alexander Pierce"], ["description", "Quia delectus ex qui qui aperiam in pariatur voluptatibus."], ["value_in_real", "88.99"], ["contact", "mail@email.com"], ["cover_data", "{\"id\":\"2a94918fbe5c4f52d76a3df6b8185172.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-22 00:00:00"], ["address", "Wehner Crossing"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[573] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.407800"], ["cover_data", "{\"id\":\"1f00a1f2544520566f7275d417cb8cf0.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 573]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#update as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-22", "name"=>"", "description"=>"Vitae perferendis facere voluptas aliquam quia cumque ipsum qui.", "value_in_real"=>"46.18", "address"=>"Harvey Junctions", "contact"=>"nasir@kuhnrau.biz", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000000508ba38 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-17208-1l72db9.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}, "id"=>"573"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 573], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+STORE[cache] ImageUploader[:cover] Academic[573] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering event/edit.html.erb within layouts/application
+  Rendered event/edit.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 12ms (Views: 2.3ms | ActiveRecord: 0.8ms)
+  [1m[36mAcademic Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" IN ('Academic') AND "events"."id" = $1 LIMIT $2[0m  [["id", 573], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-06-22 23:09:17.439068"], ["updated_at", "2017-06-22 23:09:17.439068"], ["name", "Alexander Pierce"], ["description", "Veritatis voluptatibus quasi aperiam assumenda voluptatem quis cum consequatur."], ["value_in_real", "23.03"], ["contact", "mail@email.com"], ["cover_data", "{\"id\":\"9d5744ad8009d0103174133de1474690.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-06-20 00:00:00"], ["address", "Senger Wall"], ["type", "Academic"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+STORE[store] ImageUploader[:cover] Academic[574] 1 file (0.0s)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-06-22 23:09:17.443505"], ["cover_data", "{\"id\":\"f1014313ca55ce56a11f483935e5dbd3.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":17184,\"mime_type\":\"image/jpeg\"}}"], ["id", 574]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventController#update as HTML
+  Parameters: {"event"=>{"date"=>"2017-06-20", "name"=>"", "description"=>"Ut et libero nobis.", "value_in_real"=>"96.56", "address"=>"Will Parks", "contact"=>"reed.strosin@davis.co", "type"=>"Academic", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000004f013c0 @tempfile=#<Tempfile:/tmp/RackMultipart20170622-17208-2gapvv.jpeg>, @original_filename="gfallen.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[cover]\"; filename=\"gfallen.jpeg\"\r\nContent-Type: image/jpeg\r\nContent-Length: 17184\r\n">}, "id"=>"574"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 574], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+STORE[cache] ImageUploader[:cover] Academic[574] 1 file (0.0s)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering event/edit.html.erb within layouts/application
+  Rendered event/edit.html.erb within layouts/application (0.1ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m

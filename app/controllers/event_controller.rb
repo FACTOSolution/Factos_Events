@@ -1,6 +1,6 @@
 class EventController < ApplicationController
   def index
-    @events = Event.all
+    @events = Event.filter(params.slice(:type))
   end
 
   def show
