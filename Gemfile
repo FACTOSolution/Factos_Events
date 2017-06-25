@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 gem 'shrine'
 gem 'autonumeric-rails'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
