@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe EventController, type: :controller do
+  login_user
+
   describe "GET #index" do
     context "Return all the events" do
       let(:event) { create(:event) }
@@ -80,7 +82,7 @@ RSpec.describe EventController, type: :controller do
 
       it "redirects to a new event path" do
         post :create, params: { event: event_attributes }
-        expect(response).to redirect_to Event.last
+        expect(response).to redirect_to event_path(Event.last)
       end
     end
 

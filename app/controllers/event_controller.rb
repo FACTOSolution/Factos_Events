@@ -14,7 +14,7 @@ class EventController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to @event, flash: { success: t('flash.create.success', entity: Event)}
+      redirect_to event_path(@event), flash: { success: t('flash.create.success', entity: Event)}
     else
       render :new
     end
