@@ -4,4 +4,5 @@ class Event < ApplicationRecord
 
   validates :date, :name, :description, :cover, :value_in_real, :address,
         :contact, :type,  presence:true
+  has_many :comments      
 end
