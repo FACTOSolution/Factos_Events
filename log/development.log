@@ -137,3 +137,149 @@ Migrating to AddNameToUsers (20170702004345)
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (179.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (203.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvents (20170619112049)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (92.7ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170619112049"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeEventsTable (20170619134239)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (75.2ms)[0m  [1m[35mALTER TABLE "events" ADD "name" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "events" ADD "description" text[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "events" ADD "value_in_real" decimal[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "events" ADD "contact" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "events" ADD "cover_data" text[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "events" ADD "date" timestamp[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "events" ADD "address" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170619134239"]]
+  [1m[35m (18.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTypeFieldToEvent (20170621032105)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "events" ADD "type" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170621032105"]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCuturals (20170621034113)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.5ms)[0m  [1m[35mCREATE TABLE "cuturals" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170621034113"]]
+  [1m[35m (20.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAcademics (20170621034134)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (54.6ms)[0m  [1m[35mCREATE TABLE "academics" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170621034134"]]
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddaTypeToEventsAndDropTables (20170621034548)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "academics"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "cuturals"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170621034548"]]
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20170625030758)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (64.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (31.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (52.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170625030758"]]
+  [1m[35m (18.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToUsers (20170702004345)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170702004345"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-14 12:14:27.163249"], ["updated_at", "2017-08-14 12:14:27.163249"]]
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOmniauthToUsers (20170814121835)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOmniauthToUsers (20170814121835)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "image" text[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170814121835"]]
+  [1m[35m (23.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-08-15 08:26:13 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/facebook/callback?code=AQCYV5U_20qxbPlbmfFRucghqtZ00yRQ7xLZiMFLp74H4KsnCq2i4JBLzTsNkhw6b-1Q2CWdtO2WPIYN9uZT6tXQCoL2DTN7-Yx2kUz56PpL78hbt0He4Bdy61EDOT7ebKsBJtyH67FeCVyy293PEDIfPR8eEZGYamXoWHD6A0oKIDWELxv1AIkzh8BA3dpRXICB8-6Ijtp101Z4k8___8_D0hCqZ6wLjGj9Vtb7mFEaR2Ly5r-RRIAZZ54gy4PY0xv5JBpO6eW33hWx2AiJKQVqm-4dXoFTuR5ALc2nLuZKfFd0iKVZeV2d9R5FDvbx8WYXpkhNuGxCXzxZxcCwOKn5&state=0cf07905ce025485d9a64fee1695b4e3307b60d20f709bc2" for 127.0.0.1 at 2017-08-15 08:26:14 -0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCYV5U_20qxbPlbmfFRucghqtZ00yRQ7xLZiMFLp74H4KsnCq2i4JBLzTsNkhw6b-1Q2CWdtO2WPIYN9uZT6tXQCoL2DTN7-Yx2kUz56PpL78hbt0He4Bdy61EDOT7ebKsBJtyH67FeCVyy293PEDIfPR8eEZGYamXoWHD6A0oKIDWELxv1AIkzh8BA3dpRXICB8-6Ijtp101Z4k8___8_D0hCqZ6wLjGj9Vtb7mFEaR2Ly5r-RRIAZZ54gy4PY0xv5JBpO6eW33hWx2AiJKQVqm-4dXoFTuR5ALc2nLuZKfFd0iKVZeV2d9R5FDvbx8WYXpkhNuGxCXzxZxcCwOKn5", "state"=>"0cf07905ce025485d9a64fee1695b4e3307b60d20f709bc2"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "1346040622175827"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "albpedro897@hotmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (33.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "provider", "uid", "image") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "albpedro897@hotmail.com"], ["encrypted_password", "$2a$11$uWd387mFRq0qc/0B/M3VO.nyHtdT9lP5iOtt8MPC4DW7OiEVooOO2"], ["created_at", "2017-08-15 11:26:16.021641"], ["updated_at", "2017-08-15 11:26:16.021641"], ["name", "Pedro Henrique"], ["provider", "facebook"], ["uid", "1346040622175827"], ["image", "http://graph.facebook.com/v2.6/1346040622175827/picture"]]
+  [1m[35m (79.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 571ms (ActiveRecord: 121.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-15 08:26:16 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb (6.6ms)
+Completed 200 OK in 56ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-08-15 12:23:54 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/facebook/callback?code=AQB2EugCo51OadV9N97RqV-R-SAIxjVlMDI6fglFolKvxC9H9NuPBL-KRbOorDMa3XGfdwkuGZ5wriwVxk0_jCdXsMYyo4naKwhBEnnm_ugexbiiTr1ccW8H6p0JAFu_cNRxFVXNOJhOG3HUsVsBh_oUZxV6i3KNaqTK5wNqZ2-8MlyRLiB9SPnG0Gm1knJfmJbg3Ju1fkAuto1rnlu2k6bEA8Fzc8NM_JPfrGh37AZg4C8r0az50eX0vqaAwRayHe5EdSaP7wTNPYv3HkWRDi42wmUFsM7t7eBxhJgxFAOMEfUtrrkzwnNtTICuCSNOSVvBOwSdscuz1KUEnrORCWfv&state=8647d4b624780ea4ac6295873072800b3d4a12873a68bd07" for 127.0.0.1 at 2017-08-15 12:23:58 -0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQB2EugCo51OadV9N97RqV-R-SAIxjVlMDI6fglFolKvxC9H9NuPBL-KRbOorDMa3XGfdwkuGZ5wriwVxk0_jCdXsMYyo4naKwhBEnnm_ugexbiiTr1ccW8H6p0JAFu_cNRxFVXNOJhOG3HUsVsBh_oUZxV6i3KNaqTK5wNqZ2-8MlyRLiB9SPnG0Gm1knJfmJbg3Ju1fkAuto1rnlu2k6bEA8Fzc8NM_JPfrGh37AZg4C8r0az50eX0vqaAwRayHe5EdSaP7wTNPYv3HkWRDi42wmUFsM7t7eBxhJgxFAOMEfUtrrkzwnNtTICuCSNOSVvBOwSdscuz1KUEnrORCWfv", "state"=>"8647d4b624780ea4ac6295873072800b3d4a12873a68bd07"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "1346040622175827"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 71ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-15 12:23:59 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb (5.4ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-08-15 12:24:39 -0300
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-08-15 12:27:59 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-08-15 12:30:40 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/facebook/callback?code=AQAWYYlRp-zk0M5jfDuBsLgEbAdyDrhMl4QoNIt4R77t_8ZG4fYrzuQbxYRm-0Q4FjG3Eg90mtBehvu1vkvKwKnNAZ6Q1vJpDtDZ8um0tSrZc1OQQn3fhWAODyBglJrfUkogOlsUbspF8NcqlmgGp4YPauLMseO-VmUPltgr5xfx-YCoSrRKD8ttxSEpMyERtsV7v02ZFvmk9gdSGGbUzRgXmdQk-M1ze1QUl8WtVfXdyTJhn9lXWtAiRhKdOIGwJy2vjW67lwr0XznZGalCyIVMpn2fezgAhPdhbsQa_zxSYBotE01m-dOn2razoksRUOdZN3fyNMYfGccGpHhuvPww&state=7b689fefe8a0ebd34b24ab77db78ccb20fe411e42cebe16e" for 127.0.0.1 at 2017-08-15 12:31:09 -0300
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAWYYlRp-zk0M5jfDuBsLgEbAdyDrhMl4QoNIt4R77t_8ZG4fYrzuQbxYRm-0Q4FjG3Eg90mtBehvu1vkvKwKnNAZ6Q1vJpDtDZ8um0tSrZc1OQQn3fhWAODyBglJrfUkogOlsUbspF8NcqlmgGp4YPauLMseO-VmUPltgr5xfx-YCoSrRKD8ttxSEpMyERtsV7v02ZFvmk9gdSGGbUzRgXmdQk-M1ze1QUl8WtVfXdyTJhn9lXWtAiRhKdOIGwJy2vjW67lwr0XznZGalCyIVMpn2fezgAhPdhbsQa_zxSYBotE01m-dOn2razoksRUOdZN3fyNMYfGccGpHhuvPww", "state"=>"7b689fefe8a0ebd34b24ab77db78ccb20fe411e42cebe16e"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "1487464881348167"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "luiz.mg@hotmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "provider", "uid", "image") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "luiz.mg@hotmail.com"], ["encrypted_password", "$2a$11$BPT/2pXijRVG4fSQG6DVT.f8cAQ4laLkfx2AnaHDOfgzgcbee5IN6"], ["created_at", "2017-08-15 15:31:11.308713"], ["updated_at", "2017-08-15 15:31:11.308713"], ["name", "Luiz Magno"], ["provider", "facebook"], ["uid", "1487464881348167"], ["image", "http://graph.facebook.com/v2.6/1487464881348167/picture"]]
+  [1m[35m (51.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 388ms (ActiveRecord: 59.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-15 12:31:11 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
