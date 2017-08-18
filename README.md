@@ -1,24 +1,20 @@
-# README
+# UFPI Eventos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project that aims to manage upgoing events at Universidade Federal do Píaui.
 
-Things you may want to cover:
+## How To Setup
 
-* Ruby version
+* Install Ruby
+* Install Rails
+* Run on Terminal
+> Bundle Install
+* Run the Server
+> Rails s
+* To run the tests
+> Rails -s
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Dependencies
+* Shrine
+* Autonumeric-rails
+* Devise
+* Omniauth-Facebook
