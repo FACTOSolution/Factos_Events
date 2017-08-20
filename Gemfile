@@ -18,6 +18,7 @@ gem 'shrine'
 gem 'autonumeric-rails'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'rolify'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
