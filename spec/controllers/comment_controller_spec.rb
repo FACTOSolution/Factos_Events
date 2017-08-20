@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pp'
 
 RSpec.describe CommentController, type: :controller do
   login_user
@@ -18,7 +19,8 @@ RSpec.describe CommentController, type: :controller do
 
   describe "POST #create" do
     context "with valid attributes" do
-      let(:comment_attributes) { attributes_for(:comment) }
+      let(:user) { create(:user) }
+      let(:comment_attributes) { attributes_for(:comment).merge(user_id: user.id) }
       let(:event_exem) { create(:event) }
 
       it "creates a new comment" do

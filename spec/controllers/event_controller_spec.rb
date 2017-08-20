@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pp'
 
 RSpec.describe EventController, type: :controller do
   login_user
@@ -73,10 +74,13 @@ RSpec.describe EventController, type: :controller do
 
   describe "POST #create" do
     context "with valid attributes" do
-      let(:event_attributes) { attributes_for(:event) }
+      let(:user) { create(:user)}
+      let(:event_attributes) { attributes_for(:event, user: user).merge({ user_id: user.id }) }
+
 
       it "creates a new event" do
-        expect{ post :create, params: { event: event_attributes}
+        pp event_attributes
+        expect{ post :create, params: { event: event_attributes }
       }.to change(Event, :count).by(1)
       end
 
@@ -89,7 +93,7 @@ RSpec.describe EventController, type: :controller do
     context "with invalid attributes" do
       let(:event_attributes) { attributes_for(:invalid_event) }
 
-      it "does not save the event user" do
+      it "does not save the event" do
         expect{post :create, params: { event: event_attributes }
       }.to_not change(Event, :count)
       end
