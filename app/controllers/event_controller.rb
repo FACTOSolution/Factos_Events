@@ -45,6 +45,11 @@ class EventController < ApplicationController
     @events = Event.filter(search_params)
   end
 
+  def publish
+    @event = Event.find(params[:id])
+    @event.toggle(:published)
+  end
+
   private
 
   def event_params
