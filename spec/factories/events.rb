@@ -9,6 +9,7 @@ FactoryGirl.define do
     f.contact { Faker::Internet.email }
     f.type 'Academic'
     f.cover { fixture_file_upload("/home/pedrohenique/Transferências/gfallen.jpeg", 'image/jpeg') }
+    f.published false
     f.user
   end
 

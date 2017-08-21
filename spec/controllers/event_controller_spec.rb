@@ -184,4 +184,16 @@ RSpec.describe EventController, type: :controller do
       end
     end
   end
+
+  describe "GET #publish" do
+    context "With a unpublished event" do
+      let(:event) { create(:event) }
+
+      it "turn the publish to true" do
+        get :publish, format: :json,params: { event_id: event.id }
+        event.reload
+        expect(event.published).to eq(true)
+      end
+    end
+  end
 end

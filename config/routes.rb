@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     collection do
       post :search
     end
-    get :publish, on: :member
+    get :publish
     resources :comment
   end
   resources :academic, controller: 'events', type: 'Academic', only: [:index, :show]

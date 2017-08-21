@@ -46,8 +46,8 @@ class EventController < ApplicationController
   end
 
   def publish
-    @event = Event.find(params[:id])
-    @event.toggle(:published)
+    @event = Event.find(params[:event_id])
+    @event.toggle!(:published)
   end
 
   private
