@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :event do
+    collection do
+      post :search
+    end
     resources :comment
   end
   resources :academic, controller: 'events', type: 'Academic', only: [:index, :show]

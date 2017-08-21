@@ -41,7 +41,7 @@ RSpec.describe EventController, type: :controller do
       before { get :index , params: { type: 'Cultural'} }
 
       it "returns only cultural events" do
-        expect(assigns(:events)).to_not eq([academic_event])
+        expect(assigns(:events)).to eq([cultural_event])
       end
     end
   end
@@ -79,7 +79,6 @@ RSpec.describe EventController, type: :controller do
 
 
       it "creates a new event" do
-        pp event_attributes
         expect{ post :create, params: { event: event_attributes }
       }.to change(Event, :count).by(1)
       end
@@ -157,6 +156,31 @@ RSpec.describe EventController, type: :controller do
       it "re-renders the edit method" do
         put :update, params: { id: event.id, event: invalid_event }
         expect(response).to render_template(:edit)
+      end
+    end
+  end
+
+  describe "POST #search" do
+    context "With a valid query" do
+      let(:events) { create_list(:event, 25) }
+
+      it "returns the event by name" do
+        post :search, params: { name: events.last.name }
+        expect(assigns(:events)).to eq([Event.last])
+      end
+
+      it "retuns the event by user_id" do
+        post :search, params: { user_id: events.last.user_id }
+        expect(assigns(:events)).to eq([Event.last])
+      end
+    end
+
+    context "With a invalid query" do
+      let(:events) { create_list(:event, 25) }
+
+      it "Not return any event" do
+        post :search, params: { cover: events.last.user_id }
+        expect(assigns(:events)).to_not eq([Event.last])
       end
     end
   end

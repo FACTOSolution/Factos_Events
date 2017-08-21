@@ -9,7 +9,7 @@ RSpec.describe CommentController, type: :controller do
       let(:event_exem) { create(:event) }
       let(:comment) { create(:comment, event: event_exem) }
 
-      before {get :index, params: { event_id: event_exem }}
+      before {get :index, params: { event_id: event_exem } }
 
       it "get all the comments of that event" do
         expect(assigns(:comments)).to eq([comment])

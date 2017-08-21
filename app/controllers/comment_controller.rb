@@ -1,6 +1,6 @@
 class CommentController < ApplicationController
   def index
-    @comments = Comment.where(event_id: params[:event_id])
+    @comments = Comment.filter(params.slice(:event_id))
   end
 
   def new
