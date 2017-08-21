@@ -888,3 +888,365 @@ puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
 puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/events/" for 127.0.0.1 at 2017-08-21 09:26:09 -0300
+  [1m[35m (33.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/events"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/event.json/" for 127.0.0.1 at 2017-08-21 09:26:24 -0300
+Processing by EventController#index as JSON
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/event.json/" for 127.0.0.1 at 2017-08-21 09:26:46 -0300
+Processing by EventController#index as JSON
+Completed 406 Not Acceptable in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (EventController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (5.1.1) lib/action_controller/metal/implicit_render.rb:40:in `default_render'
+actionpack (5.1.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.1) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.1) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/event.json/" for 127.0.0.1 at 2017-08-21 09:39:22 -0300
+Processing by EventController#index as JSON
+  Rendering event/index.json.builder
+  [1m[36mEvent Load (71.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered event/index.json.builder (427.7ms)
+Completed 500 Internal Server Error in 433ms (ActiveRecord: 73.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `json' for #<#<Class:0x0000000623bf80>:0x0000000623a018>
+Did you mean?  json_escape
+               JSON):
+    1: json.events @events
+  
+app/views/event/index.json.builder:1:in `_app_views_event_index_json_builder___1342942966014495454_69939014870680'
+Started GET "/event.json/" for 127.0.0.1 at 2017-08-21 09:39:50 -0300
+Processing by EventController#index as JSON
+  Rendering event/index.json.builder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered event/index.json.builder (315.0ms)
+Completed 500 Internal Server Error in 321ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `json' for #<#<Class:0x0000000623bf80>:0x000000062abf60>
+Did you mean?  json_escape
+               JSON):
+    1: json.events @events
+  
+app/views/event/index.json.builder:1:in `_app_views_event_index_json_builder___1342942966014495454_51742280'
+Started GET "/event.json/" for 127.0.0.1 at 2017-08-21 09:40:10 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as JSON
+  Rendering event/index.json.builder
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered event/index.json.builder (306.2ms)
+Completed 500 Internal Server Error in 326ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `json' for #<#<Class:0x007f81c818a7a8>:0x0000000534de88>
+Did you mean?  json_escape
+               JSON):
+    1: json.events @events
+  
+app/views/event/index.json.builder:1:in `_app_views_event_index_json_builder__32022552117262695_70097692286040'
+Started GET "/event.json/" for 127.0.0.1 at 2017-08-21 09:42:07 -0300
+Processing by EventController#index as JSON
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered event/index.json.jbuilder (31.6ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/event.json/" for 127.0.0.1 at 2017-08-21 09:42:49 -0300
+Processing by EventController#create as JSON
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/event_controller.rb:51:in `event_params'
+app/controllers/event_controller.rb:17:in `create'
+Started GET "/event.json/" for 127.0.0.1 at 2017-08-21 13:06:24 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as JSON
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered event/index.json.jbuilder (16.9ms)
+Completed 200 OK in 52ms (Views: 34.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/events.json" for 127.0.0.1 at 2017-08-21 13:06:45 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/events.json"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/event.json" for 127.0.0.1 at 2017-08-21 13:06:53 -0300
+Processing by EventController#index as JSON
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered event/index.json.jbuilder (1.9ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/event.json" for 127.0.0.1 at 2017-08-21 13:07:02 -0300
+Processing by EventController#create as JSON
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/event_controller.rb:51:in `event_params'
+app/controllers/event_controller.rb:17:in `create'
+Started POST "/event.json/" for 127.0.0.1 at 2017-08-21 13:08:15 -0300
+Processing by EventController#create as JSON
+  Parameters: {"event"=>""}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/event_controller.rb:51:in `event_params'
+app/controllers/event_controller.rb:17:in `create'
+Started POST "/event.json/" for 127.0.0.1 at 2017-08-21 13:08:38 -0300
+Processing by EventController#create as JSON
+  Parameters: {"'event':{\n}"=>nil}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/event_controller.rb:51:in `event_params'
+app/controllers/event_controller.rb:17:in `create'
+Started POST "/event.json/" for 127.0.0.1 at 2017-08-21 13:10:29 -0300
+Processing by EventController#create as JSON
+  Parameters: {"\"event\":{\n\t\"name\":\"Evento\"\n}"=>nil}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/event_controller.rb:51:in `event_params'
+app/controllers/event_controller.rb:17:in `create'
+Started POST "/event.json/" for 127.0.0.1 at 2017-08-21 13:17:00 -0300
+Processing by EventController#create as JSON
+  Parameters: {"_json"=>[{"event"=>{"name"=>"Evento"}}], "event"=>{}}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/event_controller.rb:51:in `event_params'
+app/controllers/event_controller.rb:17:in `create'
+Started POST "/event.json/" for 127.0.0.1 at 2017-08-21 13:17:22 -0300
+Processing by EventController#create as JSON
+  Parameters: {"event"=>{"name"=>"Evento"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 330ms (ActiveRecord: 169.9ms)
+
+
+  
+ActionView::MissingTemplate (Missing template event/new, application/new with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/pedrohenique/Factos/UFPI_Events/app/views"
+  * "/var/lib/gems/2.3.0/gems/devise-4.3.0/app/views"
+):
+  
+app/controllers/event_controller.rb:21:in `create'
+Started POST "/event.json/" for 127.0.0.1 at 2017-08-21 13:18:43 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#create as JSON
+  Parameters: {"event"=>{"name"=>"Evento"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 5.8ms)
+
+
+  
+ActionView::MissingTemplate (Missing template event/new, application/new with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/pedrohenique/Factos/UFPI_Events/app/views"
+  * "/var/lib/gems/2.3.0/gems/devise-4.3.0/app/views"
+):
+  
+app/controllers/event_controller.rb:21:in `create'
+Started POST "/event.json/" for 127.0.0.1 at 2017-08-21 13:19:40 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#create as JSON
+  Parameters: {"event"=>{"name"=>"Evento"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (15.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2017-08-21 16:19:41.090816"], ["updated_at", "2017-08-21 16:19:41.090816"], ["name", "Evento"]]
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/event/1
+Completed 302 Found in 96ms (ActiveRecord: 50.9ms)
+
+
+Started GET "/event/1" for 127.0.0.1 at 2017-08-21 13:19:41 -0300
+Processing by EventController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering event/show.html.erb within layouts/application
+  Rendered event/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 945ms (Views: 896.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/event.json/" for 127.0.0.1 at 2017-08-21 13:19:57 -0300
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered event/index.json.jbuilder (40.5ms)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 5.3ms)
+
+

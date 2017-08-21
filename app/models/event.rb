@@ -3,7 +3,7 @@ class Event < ApplicationRecord
   include Filterable
 
   validates :date, :name, :description, :cover, :value_in_real, :address,
-        :contact, :type,  presence:true
+        :contact, :type,  presence:false
   has_many :comments
   belongs_to :user
 end

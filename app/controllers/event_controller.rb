@@ -1,4 +1,6 @@
 class EventController < ApplicationController
+  respond_to :html, :json
+
   def index
     @events = Event.filter(params.slice(:type))
   end
