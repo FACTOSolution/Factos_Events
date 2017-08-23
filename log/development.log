@@ -1294,3 +1294,456 @@ Migrating to DeviseTokenAuthCreateUsers (20170822135244)
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/event.json/" for 127.0.0.1 at 2017-08-22 11:15:46 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (25.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered event/index.json.jbuilder (63.6ms)
+Completed 200 OK in 101ms (Views: 47.5ms | ActiveRecord: 28.4ms)
+
+
+Started GET "/event.json/" for 127.0.0.1 at 2017-08-22 11:15:53 -0300
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 25ms (Views: 0.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/auth/" for 127.0.0.1 at 2017-08-22 11:19:50 -0300
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"event"=>{"name"=>"Evento"}, "registration"=>{"event"=>{"name"=>"Evento"}}}
+Can't verify CSRF token authenticity.
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/sign_up" for 127.0.0.1 at 2017-08-22 11:20:36 -0300
+  
+ActionController::RoutingError (No route matches [POST] "/auth/sign_up"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auth/sign_up" for 127.0.0.1 at 2017-08-22 11:21:21 -0300
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for DeviseTokenAuth::RegistrationsController):
+  
+actionpack (5.1.1) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/auth/" for 127.0.0.1 at 2017-08-22 11:21:32 -0300
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"event"=>{"name"=>"Evento"}, "registration"=>{"event"=>{"name"=>"Evento"}}}
+Can't verify CSRF token authenticity.
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/" for 127.0.0.1 at 2017-08-22 11:37:08 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"event"=>{"name"=>"Evento"}, "registration"=>{"event"=>{"name"=>"Evento"}}}
+Can't verify CSRF token authenticity.
+Unpermitted parameters: :event, :registration
+Filter chain halted as :validate_sign_up_params rendered or redirected
+Completed 422 Unprocessable Entity in 98ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/" for 127.0.0.1 at 2017-08-22 11:38:20 -0300
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"albpedro458@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 309ms (Views: 0.5ms | ActiveRecord: 3.6ms)
+
+
+STORE[cache] ImageUploader[:cover] Academic 1 file (0.0s)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (20.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dortha@koeppgrant.co"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "dortha@koeppgrant.co"]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dortha@koeppgrant.co"], ["LIMIT", 1]]
+  [1m[35mSQL (13.5ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "confirmation_token", "confirmation_sent_at", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["uid", "dortha@koeppgrant.co"], ["encrypted_password", "$2a$11$8TvJHcJkYbUZUDAgNIFph.LSDdIz3NKszEFKRGr00tLlBk.TCUKmu"], ["confirmation_token", "arEQu_nGkuqt5dAVKpEU"], ["confirmation_sent_at", "2017-08-23 02:13:03.251006"], ["name", "Imelda Tillman"], ["email", "dortha@koeppgrant.co"], ["tokens", "{}"], ["created_at", "2017-08-23 02:13:03.250778"], ["updated_at", "2017-08-23 02:13:03.250778"]]
+  [1m[35m (37.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value_in_real", "contact", "cover_data", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-23 02:13:03.309006"], ["updated_at", "2017-08-23 02:13:03.309006"], ["name", "Alfonzo Dickens"], ["description", "Ratione aperiam sint nihil maxime ea enim omnis."], ["value_in_real", "14.64"], ["contact", "hattie@rogahn.info"], ["cover_data", "{\"id\":\"9c559304c95a9de353ea5a62ba3c23e0.jpeg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":10556,\"mime_type\":\"image/jpeg\"}}"], ["date", "2017-08-22 00:00:00"], ["address", "Littel Pass"], ["type", "Academic"], ["user_id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+STORE[store] ImageUploader[:cover] Academic[4] 1 file (0.01s)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "cover_data" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-08-23 02:13:03.328547"], ["cover_data", "{\"id\":\"bf1c55a7ae8ff9437459734b9d36b28f.jpeg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"gfallen.jpeg\",\"size\":10556,\"mime_type\":\"image/jpeg\"}}"], ["id", 4]]
+  [1m[35m (26.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/event" for 127.0.0.1 at 2017-08-22 23:14:21 -0300
+  [1m[35m (39.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as */*
+  Parameters: {"event"=>{}}
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 731ms (Views: 704.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/event.json" for 127.0.0.1 at 2017-08-22 23:14:33 -0300
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered event/index.json.jbuilder (123.9ms)
+Completed 200 OK in 131ms (Views: 128.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/auth/" for 127.0.0.1 at 2017-08-23 09:14:16 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"pedro@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 506ms (Views: 0.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/auth/" for 127.0.0.1 at 2017-08-23 09:17:36 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"pedro@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 510ms (Views: 0.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/auth/" for 127.0.0.1 at 2017-08-23 09:17:56 -0300
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"pedro@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"''"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :confirm_success_url
+Unpermitted parameter: :confirm_success_url
+Unpermitted parameter: :confirm_success_url
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pedro@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "pedro@email.com"]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pedro@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 187ms (Views: 0.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/auth/" for 127.0.0.1 at 2017-08-23 09:18:05 -0300
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"pedro@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"''"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :confirm_success_url
+Unpermitted parameter: :confirm_success_url
+Unpermitted parameter: :confirm_success_url
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pedro@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "pedro@email.com"]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pedro@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "confirmation_token", "confirmation_sent_at", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["uid", "pedro@email.com"], ["encrypted_password", "$2a$11$HGPNJR/ezzMp6u0lsB9gie/X.e./KaialY11vcs5gGX7J00e8cMNi"], ["confirmation_token", "rYkQzzW9AhkVtSxh1YTT"], ["confirmation_sent_at", "2017-08-23 12:18:05.519956"], ["email", "pedro@email.com"], ["tokens", "{}"], ["created_at", "2017-08-23 12:18:05.519726"], ["updated_at", "2017-08-23 12:18:05.519726"]]
+  [1m[35m (80.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering /var/lib/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views/devise/mailer/confirmation_instructions.html.erb (119.3ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 186.1ms
+Completed 500 Internal Server Error in 1882ms (ActiveRecord: 81.5ms)
+
+
+  
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    2: 
+    3: <p><%= t '.confirm_link_msg' %> </p>
+    4: 
+    5: <p><%= link_to t('.confirm_account_link'), confirmation_url(@resource, {confirmation_token: @token, config: message['client-config'].to_s, redirect_url: message['redirect-url']}).html_safe %></p>
+  
+actionpack (5.1.1) lib/action_dispatch/http/url.rb:62:in `full_url_for'
+actionpack (5.1.1) lib/action_dispatch/http/url.rb:52:in `url_for'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:331:in `block in <class:RouteSet>'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:826:in `url_for'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:267:in `call'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:208:in `call'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:323:in `block (2 levels) in define_url_helper'
+actionpack (5.1.1) lib/action_dispatch/routing/routes_proxy.rb:32:in `user_confirmation_url'
+actionpack (5.1.1) lib/action_dispatch/routing/routes_proxy.rb:35:in `method_missing'
+devise (4.3.0) lib/devise/controllers/url_helpers.rb:51:in `block (4 levels) in generate_helpers!'
+devise_token_auth (0.1.42) app/views/devise/mailer/confirmation_instructions.html.erb:5:in `__var_lib_gems_______gems_devise_token_auth________app_views_devise_mailer_confirmation_instructions_html_erb___1869206097025538190_30426700'
+actionview (5.1.1) lib/action_view/template.rb:157:in `block in render'
+activesupport (5.1.1) lib/active_support/notifications.rb:168:in `instrument'
+actionview (5.1.1) lib/action_view/template.rb:352:in `instrument_render_template'
+actionview (5.1.1) lib/action_view/template.rb:155:in `render'
+actionview (5.1.1) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+actionview (5.1.1) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+activesupport (5.1.1) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.1) lib/active_support/notifications.rb:166:in `instrument'
+actionview (5.1.1) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+actionview (5.1.1) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+actionview (5.1.1) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+actionview (5.1.1) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+actionview (5.1.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+actionview (5.1.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+actionview (5.1.1) lib/action_view/renderer/renderer.rb:23:in `render'
+actionview (5.1.1) lib/action_view/rendering.rb:103:in `_render_template'
+actionview (5.1.1) lib/action_view/rendering.rb:83:in `render_to_body'
+actionpack (5.1.1) lib/abstract_controller/rendering.rb:24:in `render'
+actionmailer (5.1.1) lib/action_mailer/base.rb:935:in `block in collect_responses_from_templates'
+actionmailer (5.1.1) lib/action_mailer/base.rb:932:in `each'
+actionmailer (5.1.1) lib/action_mailer/base.rb:932:in `each'
+actionmailer (5.1.1) lib/action_mailer/base.rb:932:in `map'
+actionmailer (5.1.1) lib/action_mailer/base.rb:932:in `collect_responses_from_templates'
+actionmailer (5.1.1) lib/action_mailer/base.rb:917:in `collect_responses'
+actionmailer (5.1.1) lib/action_mailer/base.rb:830:in `mail'
+devise (4.3.0) lib/devise/mailers/helpers.rb:17:in `devise_mail'
+devise (4.3.0) app/mailers/devise/mailer.rb:7:in `confirmation_instructions'
+actionpack (5.1.1) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionmailer (5.1.1) lib/action_mailer/rescuable.rb:23:in `block in process'
+actionmailer (5.1.1) lib/action_mailer/rescuable.rb:15:in `handle_exceptions'
+actionmailer (5.1.1) lib/action_mailer/rescuable.rb:22:in `process'
+actionview (5.1.1) lib/action_view/rendering.rb:30:in `process'
+actionmailer (5.1.1) lib/action_mailer/base.rb:609:in `block in process'
+activesupport (5.1.1) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.1) lib/active_support/notifications.rb:166:in `instrument'
+actionmailer (5.1.1) lib/action_mailer/base.rb:608:in `process'
+actionmailer (5.1.1) lib/action_mailer/message_delivery.rb:105:in `block in processed_mailer'
+actionmailer (5.1.1) lib/action_mailer/message_delivery.rb:104:in `tap'
+actionmailer (5.1.1) lib/action_mailer/message_delivery.rb:104:in `processed_mailer'
+actionmailer (5.1.1) lib/action_mailer/message_delivery.rb:95:in `deliver_now'
+devise (4.3.0) lib/devise/models/authenticatable.rb:191:in `send_devise_notification'
+devise_token_auth (0.1.42) app/models/devise_token_auth/concerns/user.rb:75:in `send_confirmation_instructions'
+devise_token_auth (0.1.42) app/controllers/devise_token_auth/registrations_controller.rb:46:in `create'
+actionpack (5.1.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.1) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.1) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.1) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.1) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.1) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/auth/" for 127.0.0.1 at 2017-08-23 09:23:20 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"pedro@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"''"}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :confirm_success_url
+Unpermitted parameter: :confirm_success_url
+Unpermitted parameter: :confirm_success_url
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pedro@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "pedro@email.com"]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pedro@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 536ms (Views: 0.5ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2017-08-23 09:24:02 -0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"pedro@email.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (email = 'pedro@email.com' AND provider='email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/auth/" for 127.0.0.1 at 2017-08-23 09:26:39 -0300
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"albpedro458@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 162ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth/" for 127.0.0.1 at 2017-08-23 09:27:03 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"albpedro458@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "albpedro458@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "albpedro458@gmail.com"]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "albpedro458@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "confirmation_token", "confirmation_sent_at", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["uid", "albpedro458@gmail.com"], ["encrypted_password", "$2a$11$um8iJFESEskHUiSwg8aCgO9gu38/tIYHrGb1GZmnW.jJknIM76BAC"], ["confirmation_token", "jnio2z8wxciz21oQoKWx"], ["confirmation_sent_at", "2017-08-23 12:27:03.787463"], ["email", "albpedro458@gmail.com"], ["tokens", "{}"], ["created_at", "2017-08-23 12:27:03.787287"], ["updated_at", "2017-08-23 12:27:03.787287"]]
+  [1m[35m (38.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering /var/lib/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views/devise/mailer/confirmation_instructions.html.erb (2.7ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 183.4ms
+Sent mail to albpedro458@gmail.com (377.8ms)
+Date: Wed, 23 Aug 2017 09:27:04 -0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: albpedro458@gmail.com
+Message-ID: <599d74981bdd4_2d6b30c85fc4653b@pedrohenique-Inspiron-5437.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+client-config: default
+redirect-url: 
+
+<p>Welcome albpedro458@gmail.com!</p>
+
+<p>You can confirm your account email through the link below: </p>
+
+<p><a href="http://localhost:3000/auth/confirmation?config=default&confirmation_token=jnio2z8wxciz21oQoKWx&redirect_url=">Confirm my account</a></p>
+
+Completed 200 OK in 1260ms (Views: 0.4ms | ActiveRecord: 42.3ms)
+
+
+Started POST "/auth/" for 127.0.0.1 at 2017-08-23 09:35:57 -0300
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"albpedro48@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "albpedro48@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "albpedro48@gmail.com"]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "albpedro48@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "confirmation_token", "confirmation_sent_at", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["uid", "albpedro48@gmail.com"], ["encrypted_password", "$2a$11$x17uZMiU.SQJ16SPGCH8a.n8n0j3xc/673cxh2UFs7JGEYgHTBnRy"], ["confirmation_token", "Ht2oYGtrjQimmPovhgyb"], ["confirmation_sent_at", "2017-08-23 12:35:57.873913"], ["email", "albpedro48@gmail.com"], ["tokens", "{}"], ["created_at", "2017-08-23 12:35:57.873667"], ["updated_at", "2017-08-23 12:35:57.873667"]]
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering /var/lib/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views/devise/mailer/confirmation_instructions.html.erb (2.9ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 204.6ms
+Sent mail to albpedro48@gmail.com (19.9ms)
+Date: Wed, 23 Aug 2017 09:35:58 -0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: albpedro48@gmail.com
+Message-ID: <599d76ae34625_2eeb30e2bf0123f1@pedrohenique-Inspiron-5437.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+client-config: default
+redirect-url: 
+
+<p>Welcome albpedro48@gmail.com!</p>
+
+<p>You can confirm your account email through the link below: </p>
+
+<p><a href="http://localhost:3000/auth/confirmation?config=default&confirmation_token=Ht2oYGtrjQimmPovhgyb&redirect_url=">Confirm my account</a></p>
+
+Completed 200 OK in 899ms (Views: 0.5ms | ActiveRecord: 37.0ms)
+
+
