@@ -1,5 +1,5 @@
 class CommentController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 
   def index
     @comments = Comment.filter(params.slice(:event_id))
