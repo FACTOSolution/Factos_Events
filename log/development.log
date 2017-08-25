@@ -1868,3 +1868,21 @@ Processing by EventController#index as JSON
 Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/users/1.json" for 127.0.0.1 at 2017-08-25 13:45:36 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/pedrohenique/Factos/UFPI_Events/app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
+  respond_to: :json
+             ^):
+  
+app/controllers/users_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
+Started GET "/users/1.json" for 127.0.0.1 at 2017-08-25 13:46:15 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (90.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  Rendered users/show.json.jbuilder (3.6ms)
+Completed 200 OK in 221ms (Views: 11.2ms | ActiveRecord: 123.7ms)
+
+
