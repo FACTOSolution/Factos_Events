@@ -16,3 +16,5 @@ test:
 production:
   <<: *default
   database: events_production
+  username: events
+  password: <%= ENV['EVENTS_DATABASE_PRODUCTION'] %>

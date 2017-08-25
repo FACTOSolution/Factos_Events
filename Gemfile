@@ -20,6 +20,8 @@ gem 'omniauth-facebook'
 gem 'rolify'
 gem 'cancancan'
 gem 'devise_token_auth'
+gem 'factory_girl_rails'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -40,3 +42,5 @@ end
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
+
+ruby "2.3.1"
