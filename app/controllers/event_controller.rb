@@ -1,6 +1,5 @@
 class EventController < ApplicationController
   respond_to :html, :json
-  #before_action :authenticate_user!
 
   def index
     @events = Event.filter(params.slice(:type))
