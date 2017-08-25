@@ -1839,3 +1839,32 @@ Processing by EventController#index as JSON
 Completed 200 OK in 325ms (Views: 78.0ms | ActiveRecord: 34.8ms)
 
 
+Started GET "/event.json" for 127.0.0.1 at 2017-08-25 13:17:01 -0300
+  [1m[35m (48.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (44.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered event/index.json.jbuilder (131.6ms)
+Completed 200 OK in 173ms (Views: 110.3ms | ActiveRecord: 75.6ms)
+
+
+Started GET "/event.json" for 127.0.0.1 at 2017-08-25 13:17:42 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered event/index.json.jbuilder (42.2ms)
+Completed 200 OK in 62ms (Views: 46.6ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/event.json" for 127.0.0.1 at 2017-08-25 13:18:29 -0300
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered event/index.json.jbuilder (4.9ms)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.6ms)
+
+
