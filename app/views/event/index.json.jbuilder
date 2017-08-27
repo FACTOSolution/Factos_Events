@@ -1,4 +1,5 @@
 json.array! @events do |event|
+    json.event_id event.id
     json.name event.name
     json.description event.description
     json.value_in_real event.value_in_real
