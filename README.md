@@ -18,3 +18,5 @@ This is a project that aims to manage upgoing events at Universidade Federal do 
 * Autonumeric-rails
 * Devise
 * Omniauth-Facebook
+
+## 
