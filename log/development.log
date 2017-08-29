@@ -1948,3 +1948,171 @@ Processing by EventController#index as JSON
 Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 1.6ms)
 
 
+  [1m[35m (15.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (36.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameCollumnsValueCover (20170829192644)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameCollumnsValueCover (20170829192644)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (164.7ms)[0m  [1m[35mALTER TABLE "events" RENAME COLUMN "value_in_real" TO "value"[0m
+  [1m[35m (45.9ms)[0m  [1m[35mALTER TABLE "events" RENAME COLUMN "cover" TO "image_url"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameCollumnsValueCover (20170829192644)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "events" RENAME COLUMN "value_in_real" TO "value"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "events" RENAME COLUMN "cover_data" TO "image_url"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170829192644"]]
+  [1m[35m (58.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (73.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/event.json" for 127.0.0.1 at 2017-08-29 16:51:41 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#create as JSON
+  Parameters: {"event"=>{"name"=>"Event Test", "date"=>"2014-12-29T13:37:09Z", "user_id"=>5}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (100.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 780ms (ActiveRecord: 109.3ms)
+
+
+  
+ActionView::MissingTemplate (Missing template event/new, application/new with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/pedrohenique/Factos/Factos_Events/app/views"
+  * "/var/lib/gems/2.3.0/gems/devise_token_auth-0.1.42/app/views"
+  * "/var/lib/gems/2.3.0/gems/devise-4.3.0/app/views"
+):
+  
+app/controllers/event_controller.rb:22:in `create'
+Started GET "/event.json" for 127.0.0.1 at 2017-08-29 16:52:02 -0300
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered event/index.json.jbuilder (79.2ms)
+Completed 200 OK in 86ms (Views: 81.6ms | ActiveRecord: 2.1ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "elijah@kshlerinhaag.name"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "elijah@kshlerinhaag.name"]]
+  [1m[35mSQL (19.8ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "elijah@kshlerinhaag.name"], ["encrypted_password", "$2a$11$2ya9HLQZ2tLQK9tTdWtDKeTgvcVQf/05iv5LtuLXNyfFl5GiSfux6"], ["name", "Madalyn Maggio Sr."], ["email", "elijah@kshlerinhaag.name"], ["tokens", "{}"], ["created_at", "2017-08-29 19:53:03.389966"], ["updated_at", "2017-08-29 19:53:03.389966"]]
+  [1m[35m (21.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (27.6ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "image_url", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-29 19:53:03.440460"], ["updated_at", "2017-08-29 19:53:03.440460"], ["name", "Mr. Amaya Bahringer"], ["description", "Aut iste expedita velit delectus voluptas non."], ["value", "36.52"], ["contact", "corine@sanford.info"], ["image_url", "http://lorempixel.com/300/300"], ["date", "2017-08-29 00:00:00"], ["address", "Jolie Isle"], ["type", "Academic"], ["user_id", 6]]
+  [1m[35m (29.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rasheed_renner@jaskolskimarquardt.net"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "rasheed_renner@jaskolskimarquardt.net"]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "rasheed_renner@jaskolskimarquardt.net"], ["encrypted_password", "$2a$11$M/1/F75rpgh22ll.GxNRROMUQsMvtRiy.Wju1vBrY9tUURabeMrUu"], ["name", "Travon Hand"], ["email", "rasheed_renner@jaskolskimarquardt.net"], ["tokens", "{}"], ["created_at", "2017-08-29 19:53:54.817752"], ["updated_at", "2017-08-29 19:53:54.817752"]]
+  [1m[35m (33.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "image_url", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-29 19:53:54.862356"], ["updated_at", "2017-08-29 19:53:54.862356"], ["name", "Marie Rath"], ["description", "Quae eos nulla laborum porro."], ["value", "68.84"], ["contact", "oral_kub@kshlerin.net"], ["image_url", "http://lorempixel.com/300/300"], ["date", "2017-08-28 00:00:00"], ["address", "Will Curve"], ["type", "Academic"], ["user_id", 7]]
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "stewart@johns.biz"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "stewart@johns.biz"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "stewart@johns.biz"], ["encrypted_password", "$2a$11$FUTnNi.GptCGUadZXv3wfu79e0RwWpvJTgMZ4nYKGiIDyiRfBa5KS"], ["name", "Ms. Frederique Leannon"], ["email", "stewart@johns.biz"], ["tokens", "{}"], ["created_at", "2017-08-29 19:53:55.150827"], ["updated_at", "2017-08-29 19:53:55.150827"]]
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "image_url", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-29 19:53:55.166738"], ["updated_at", "2017-08-29 19:53:55.166738"], ["name", "Mrs. Scarlett Schoen"], ["description", "Eius dolorum dicta voluptates laboriosam."], ["value", "77.24"], ["contact", "jedidiah_kris@donnellywest.net"], ["image_url", "http://lorempixel.com/300/300"], ["date", "2017-08-27 00:00:00"], ["address", "Darien Walks"], ["type", "Academic"], ["user_id", 8]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "barney_moriette@stanton.net"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "barney_moriette@stanton.net"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "barney_moriette@stanton.net"], ["encrypted_password", "$2a$11$cmbGXvcuP9In35p2rbeV8uzBZJABosapJPp8nPWq/MnbgCkOR/XOm"], ["name", "Marcelle Muller"], ["email", "barney_moriette@stanton.net"], ["tokens", "{}"], ["created_at", "2017-08-29 19:53:55.450505"], ["updated_at", "2017-08-29 19:53:55.450505"]]
+  [1m[35m (56.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "image_url", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-29 19:53:55.510547"], ["updated_at", "2017-08-29 19:53:55.510547"], ["name", "Daphne Schuppe MD"], ["description", "Velit sint odit dolorum sit qui sunt."], ["value", "82.57"], ["contact", "ariane@parker.biz"], ["image_url", "http://lorempixel.com/300/300"], ["date", "2017-08-28 00:00:00"], ["address", "Myrtis Harbors"], ["type", "Academic"], ["user_id", 9]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "blair@okon.com"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "blair@okon.com"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "blair@okon.com"], ["encrypted_password", "$2a$11$J2uwpk/RWFvHdmXBPPDMmuzIuK1OfFTQkoS.cgIk7FCD3U5mX1lim"], ["name", "Aubrey Green"], ["email", "blair@okon.com"], ["tokens", "{}"], ["created_at", "2017-08-29 19:53:55.794946"], ["updated_at", "2017-08-29 19:53:55.794946"]]
+  [1m[35m (55.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "image_url", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-29 19:53:55.854406"], ["updated_at", "2017-08-29 19:53:55.854406"], ["name", "Janet Kihn"], ["description", "Quis doloremque eveniet a."], ["value", "32.75"], ["contact", "oren@reichel.net"], ["image_url", "http://lorempixel.com/300/300"], ["date", "2017-08-27 00:00:00"], ["address", "Roob Rapid"], ["type", "Academic"], ["user_id", 10]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "laura_wisoky@rau.name"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "laura_wisoky@rau.name"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "laura_wisoky@rau.name"], ["encrypted_password", "$2a$11$I8DvR5Cg5CrSvzqOm7KMduUhvc1mVBMWXFdjjRV2Diz/mWjugzTQi"], ["name", "Alejandra Schamberger"], ["email", "laura_wisoky@rau.name"], ["tokens", "{}"], ["created_at", "2017-08-29 19:53:56.137512"], ["updated_at", "2017-08-29 19:53:56.137512"]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "image_url", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-29 19:53:56.153911"], ["updated_at", "2017-08-29 19:53:56.153911"], ["name", "Ms. Noe Kautzer"], ["description", "Nesciunt voluptate et enim provident enim fugiat."], ["value", "77.03"], ["contact", "kurt_schuster@witting.biz"], ["image_url", "http://lorempixel.com/300/300"], ["date", "2017-08-28 00:00:00"], ["address", "Flatley Curve"], ["type", "Academic"], ["user_id", 11]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dayna@rosenbaumlittel.org"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "dayna@rosenbaumlittel.org"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "dayna@rosenbaumlittel.org"], ["encrypted_password", "$2a$11$AD4/9nuCu7t.Y.9eEuEY7uRMUuUEMiIHJeJJ7EV7jv9HXsSjIXTOG"], ["name", "Mrs. Jeffrey Brakus"], ["email", "dayna@rosenbaumlittel.org"], ["tokens", "{}"], ["created_at", "2017-08-29 19:53:56.437600"], ["updated_at", "2017-08-29 19:53:56.437600"]]
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "image_url", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-29 19:53:56.453687"], ["updated_at", "2017-08-29 19:53:56.453687"], ["name", "Idella Collins"], ["description", "Commodi dolore eum omnis aspernatur illo odio."], ["value", "30.31"], ["contact", "everette@uptonbednar.net"], ["image_url", "http://lorempixel.com/300/300"], ["date", "2017-08-27 00:00:00"], ["address", "Linnea Grove"], ["type", "Academic"], ["user_id", 12]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kameron_bogan@bernier.biz"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "kameron_bogan@bernier.biz"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "kameron_bogan@bernier.biz"], ["encrypted_password", "$2a$11$FZE2hvXTEIdZn2v4l6VOtuo6GnrK9bRIwgMmsKgQE5qkf7U7Iuf1G"], ["name", "Jaeden D'Amore I"], ["email", "kameron_bogan@bernier.biz"], ["tokens", "{}"], ["created_at", "2017-08-29 19:53:56.737251"], ["updated_at", "2017-08-29 19:53:56.737251"]]
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "image_url", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-29 19:53:56.753153"], ["updated_at", "2017-08-29 19:53:56.753153"], ["name", "Maci Orn"], ["description", "Voluptatibus in est voluptas."], ["value", "86.09"], ["contact", "julie.stanton@kuhn.name"], ["image_url", "http://lorempixel.com/300/300"], ["date", "2017-08-29 00:00:00"], ["address", "Willow Motorway"], ["type", "Academic"], ["user_id", 13]]
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gretchen@effertzdare.co"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "gretchen@effertzdare.co"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "gretchen@effertzdare.co"], ["encrypted_password", "$2a$11$Q.CeCP4cmq/wtr0QvAvy0.IvlFkTTi2x/9URvpu2CR4x0pTUEc16e"], ["name", "Lyda Ondricka"], ["email", "gretchen@effertzdare.co"], ["tokens", "{}"], ["created_at", "2017-08-29 19:53:57.037275"], ["updated_at", "2017-08-29 19:53:57.037275"]]
+  [1m[35m (22.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "image_url", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-29 19:53:57.063714"], ["updated_at", "2017-08-29 19:53:57.063714"], ["name", "Harry Price"], ["description", "Iste ad nam et maxime ut."], ["value", "11.31"], ["contact", "casper.botsford@grady.co"], ["image_url", "http://lorempixel.com/300/300"], ["date", "2017-08-29 00:00:00"], ["address", "Botsford Route"], ["type", "Academic"], ["user_id", 14]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lizzie.dooley@johnstonkutch.biz"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "lizzie.dooley@johnstonkutch.biz"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "lizzie.dooley@johnstonkutch.biz"], ["encrypted_password", "$2a$11$PI.oGjd2lTqiDL7BtX/k3eID79f32YVZ/QsHXRp9jlHgw/ODYiBgW"], ["name", "Letha Bins"], ["email", "lizzie.dooley@johnstonkutch.biz"], ["tokens", "{}"], ["created_at", "2017-08-29 19:53:57.351295"], ["updated_at", "2017-08-29 19:53:57.351295"]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "image_url", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-29 19:53:57.364429"], ["updated_at", "2017-08-29 19:53:57.364429"], ["name", "Salvatore Hagenes"], ["description", "Quis accusamus quasi totam."], ["value", "82.39"], ["contact", "ricardo@trantow.com"], ["image_url", "http://lorempixel.com/300/300"], ["date", "2017-08-29 00:00:00"], ["address", "Reichert Dam"], ["type", "Academic"], ["user_id", 15]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "angela@dietrich.info"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "angela@dietrich.info"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "angela@dietrich.info"], ["encrypted_password", "$2a$11$LlX3guKH1l//jDVaxMYLEej6.qv0pfhSMoKsw95V0jlAD64i5mu6i"], ["name", "Dr. Kailey Stokes"], ["email", "angela@dietrich.info"], ["tokens", "{}"], ["created_at", "2017-08-29 19:53:57.649967"], ["updated_at", "2017-08-29 19:53:57.649967"]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "image_url", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["created_at", "2017-08-29 19:53:57.662901"], ["updated_at", "2017-08-29 19:53:57.662901"], ["name", "Ariel Schulist"], ["description", "Iure expedita aut eum ut voluptatum dolorem."], ["value", "41.39"], ["contact", "gladyce.pollich@reilly.biz"], ["image_url", "http://lorempixel.com/300/300"], ["date", "2017-08-28 00:00:00"], ["address", "Edd Haven"], ["type", "Academic"], ["user_id", 16]]
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/event.json" for 127.0.0.1 at 2017-08-29 16:54:25 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered event/index.json.jbuilder (124.2ms)
+Completed 200 OK in 144ms (Views: 120.9ms | ActiveRecord: 13.3ms)
+
+

@@ -54,8 +54,8 @@ class EventController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:date, :name, :description, :cover,
-      :value_in_real, :address, :type, :contact, :user_id)
+    params.require(:event).permit(:date, :name, :description, :image_url,
+      :value, :address, :type, :contact, :user_id)
   end
 
   def search_params
