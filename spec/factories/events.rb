@@ -8,7 +8,6 @@ FactoryGirl.define do
     f.address { Faker::Address.street_name }
     f.contact { Faker::Internet.email }
     f.type 'Academic'
-    f.image_url { Faker::LoremPixel.image }
     f.published false
     f.user
   end
@@ -23,5 +22,12 @@ FactoryGirl.define do
 
   factory :invalid_event, parent: :event do |f|
     f.name nil
+  end
+
+  factory :event_with_images, parent: :event do
+    after(:create) do |event|
+      create(:image, event: event)
+      create(:image, event: event)
+    end
   end
 end

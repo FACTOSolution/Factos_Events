@@ -2116,3 +2116,175 @@ Processing by EventController#index as JSON
 Completed 200 OK in 144ms (Views: 120.9ms | ActiveRecord: 13.3ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTableImageEvent (20170830141026)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (38.8ms)[0m  [1m[35mALTER TABLE "events" DROP "image_url"[0m
+  [1m[35m (460.1ms)[0m  [1m[35mCREATE TABLE "image_events" ("id" bigserial primary key, "image_url" character varying)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830141026"]]
+  [1m[35m (19.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddEventIdToImageEvent (20170830145550)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "events" ADD "event_id" integer[0m
+  [1m[35m (57.3ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_event_id" ON "events"  ("event_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830145550"]]
+  [1m[35m (20.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateImages (20170830150023)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateImages (20170830150023)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (156.7ms)[0m  [1m[35mCREATE TABLE "images" ("id" bigserial primary key, "image_url" character varying, "event_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (52.4ms)[0m  [1m[35mCREATE  INDEX  "index_images_on_event_id" ON "images"  ("event_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830150023"]]
+  [1m[35m (24.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DropImagEventTableAddEventIdToImage (20170830150144)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.3ms)[0m  [1m[35mDROP TABLE "image_events"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830150144"]]
+  [1m[35m (21.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/event.json" for 127.0.0.1 at 2017-08-30 12:06:52 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered event/index.json.jbuilder (144.0ms)
+Completed 200 OK in 164ms (Views: 141.5ms | ActiveRecord: 12.8ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dorthy@osinski.org"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "dorthy@osinski.org"]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "dorthy@osinski.org"], ["encrypted_password", "$2a$11$6CIHd2lVntfjwCEQ7JlGAe3/ukA08oTcZ6jiql4/pZU47WbkRKb9i"], ["name", "Rita Pfannerstill"], ["email", "dorthy@osinski.org"], ["tokens", "{}"], ["created_at", "2017-08-30 15:34:43.754419"], ["updated_at", "2017-08-30 15:34:43.754419"]]
+  [1m[35m (21.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-08-30 15:34:43.787152"], ["updated_at", "2017-08-30 15:34:43.787152"], ["name", "Ephraim Gutmann"], ["description", "Ipsa et quod aut tempore error ab repellat magnam."], ["value", "10.43"], ["contact", "christian@glover.biz"], ["date", "2017-08-29 00:00:00"], ["address", "Thora Park"], ["type", "Academic"], ["user_id", 17]]
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "images" ("image_url", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image_url", "http://lorempixel.com/300/300"], ["event_id", 20], ["created_at", "2017-08-30 15:34:43.819516"], ["updated_at", "2017-08-30 15:34:43.819516"]]
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "philip.ritchie@little.io"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."provider" = $1 AND "users"."email" = $2[0m  [["provider", "email"], ["email", "philip.ritchie@little.io"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "name", "email", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["uid", "philip.ritchie@little.io"], ["encrypted_password", "$2a$11$LUJd58edErRcnBb1osPwp.O8CSXji5LVU4Pby6GYHsR78UVvHt.QO"], ["name", "Keven Kohler"], ["email", "philip.ritchie@little.io"], ["tokens", "{}"], ["created_at", "2017-08-30 15:36:00.118176"], ["updated_at", "2017-08-30 15:36:00.118176"]]
+  [1m[35m (30.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "date", "address", "type", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", "2017-08-30 15:36:00.159367"], ["updated_at", "2017-08-30 15:36:00.159367"], ["name", "Murray Brown"], ["description", "Voluptas ut sit illo quos enim dignissimos."], ["value", "18.47"], ["contact", "morton.breitenberg@rodriguez.info"], ["date", "2017-08-28 00:00:00"], ["address", "Wolff Valley"], ["type", "Academic"], ["user_id", 18]]
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("image_url", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image_url", "http://lorempixel.com/300/300"], ["event_id", 21], ["created_at", "2017-08-30 15:36:00.191211"], ["updated_at", "2017-08-30 15:36:00.191211"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("image_url", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image_url", "http://lorempixel.com/300/300"], ["event_id", 21], ["created_at", "2017-08-30 15:36:00.197383"], ["updated_at", "2017-08-30 15:36:00.197383"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/event.json" for 127.0.0.1 at 2017-08-30 12:37:51 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered event/index.json.jbuilder (395.1ms)
+Completed 500 Internal Server Error in 415ms (ActiveRecord: 6.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `jsonl' for #<#<Class:0x007fe56419c430>:0x00000005dcbab8>
+Did you mean?  json
+               JSON):
+     7:     json.contact event.contact
+     8:     json.type event.type
+     9:     json.date event.date
+    10:     jsonl.images event.images
+    11:     json.user event.user.id
+    12: end
+  
+app/views/event/index.json.jbuilder:10:in `block in _app_views_event_index_json_jbuilder___814177560048444799_70311601826060'
+app/views/event/index.json.jbuilder:1:in `_app_views_event_index_json_jbuilder___814177560048444799_70311601826060'
+Started GET "/event.json" for 127.0.0.1 at 2017-08-30 12:38:06 -0300
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 10]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 11]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 12]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 13]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 14]]
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 15]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 16]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 17]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 18]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 19]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 20]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 21]]
+  Rendered event/index.json.jbuilder (178.0ms)
+Completed 200 OK in 184ms (Views: 165.6ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/event.json" for 127.0.0.1 at 2017-08-30 12:38:31 -0300
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."event_id" = $1 LIMIT $2[0m  [["event_id", 10], ["LIMIT", 11]]
+  Rendered event/index.json.jbuilder (23.2ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<ActiveRecord::Associations::CollectionProxy []>):
+     7:     json.contact event.contact
+     8:     json.type event.type
+     9:     json.date event.date
+    10:     json.images event.images.image_url
+    11:     json.user event.user.id
+    12: end
+  
+app/views/event/index.json.jbuilder:10:in `block in _app_views_event_index_json_jbuilder___814177560048444799_70311567501980'
+app/views/event/index.json.jbuilder:1:in `_app_views_event_index_json_jbuilder___814177560048444799_70311567501980'

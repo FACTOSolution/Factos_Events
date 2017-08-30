@@ -7,6 +7,6 @@ json.array! @events do |event|
     json.contact event.contact
     json.type event.type
     json.date event.date
-    json.image_url event.image_url
+    json.images event.images
     json.user event.user.id
 end
