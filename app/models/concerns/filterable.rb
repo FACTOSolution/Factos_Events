@@ -9,5 +9,13 @@ module Filterable
       end
       results
     end
+
+    def ordered(ordering_params)
+      results = self.where(nil)
+      ordering_params.each do |key, value|
+        results = results.order(key => value) if value.present?
+      end
+      results
+    end
   end
 end

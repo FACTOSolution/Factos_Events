@@ -51,6 +51,10 @@ class EventController < ApplicationController
     @event.toggle!(:published)
   end
 
+  def order
+    @events = Event.ordered(ordering_params)
+  end
+
   private
 
   def event_params
@@ -60,5 +64,9 @@ class EventController < ApplicationController
 
   def search_params
     params.permit(:name, :user_id)
+  end
+
+  def ordering_params
+    params.permit(:date, :value)
   end
 end
