@@ -52,7 +52,7 @@ class EventController < ApplicationController
   end
 
   def order
-    @events = Event.ordered(ordering_params)
+    @events = Event.ordered(ordering_params).published
   end
 
   private

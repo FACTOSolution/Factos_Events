@@ -7,4 +7,7 @@ class Event < ApplicationRecord
   has_many :images, dependent: :delete_all
   belongs_to :user
 
+  def self.published
+    where(published: true)
+  end
 end

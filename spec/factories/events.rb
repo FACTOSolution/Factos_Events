@@ -9,11 +9,29 @@ FactoryGirl.define do
     f.contact { Faker::Internet.email }
     f.type 'Academic'
     f.published false
+    f.lat { Faker::Address.latitude }
+    f.long { Faker::Address.longitude }
     f.user
   end
 
   factory :academic_event, parent: :event, class: Academic do |f|
     f.type 'Academic'
+  end
+
+  factory :cultural_published_event, parent: :event, class: Cultural do |f|
+    f.type 'Cultural'
+    f.published true
+    after(:create) do |event|
+      create(:image, event: event)
+    end
+  end
+
+  factory :academic_published_event, parent: :event, class: Academic do |f|
+    f.type 'Academic'
+    f.published true
+    after(:create) do |event|
+      create(:image, event: event)
+    end
   end
 
   factory :cultural_event, parent: :event, class: Cultural do |f|
