@@ -6,6 +6,8 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
   rolify
 
+  has_many :events, dependent: :delete_all
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session['devise.facebook_data'] && session['devise.facebook_data']
