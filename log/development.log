@@ -2288,3 +2288,86 @@ ActionView::Template::Error (undefined method `image_url' for #<ActiveRecord::As
   
 app/views/event/index.json.jbuilder:10:in `block in _app_views_event_index_json_jbuilder___814177560048444799_70311567501980'
 app/views/event/index.json.jbuilder:1:in `_app_views_event_index_json_jbuilder___814177560048444799_70311567501980'
+Started GET "/event.json" for 127.0.0.1 at 2017-08-30 15:50:10 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as JSON
+  Parameters: {"event"=>{}}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 10]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 11]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 12]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 13]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 14]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 15]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 16]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 17]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 18]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 19]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 20]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 21]]
+  Rendered event/index.json.jbuilder (177.6ms)
+Completed 200 OK in 198ms (Views: 165.2ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/event" for 127.0.0.1 at 2017-09-07 16:56:33 -0300
+  [1m[35m (48.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as */*
+  Rendering event/index.html.erb within layouts/application
+  Rendered event/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 813ms (Views: 795.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/event.json" for 127.0.0.1 at 2017-09-07 16:56:54 -0300
+Processing by EventController#index as JSON
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (65.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (68.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 10]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 11]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 12]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 13]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 14]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 15]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 16]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 17]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 18]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 19]]
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 20]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 21]]
+  Rendered event/index.json.jbuilder (531.2ms)
+Completed 200 OK in 541ms (Views: 371.8ms | ActiveRecord: 166.6ms)
+
+
+Started GET "/event/10.json" for 127.0.0.1 at 2017-09-07 16:57:01 -0300
+Processing by EventController#show as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering event/show.json.jbuilder
+  Rendered event/show.json.jbuilder (1.7ms)
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 0.5ms)
+
+
