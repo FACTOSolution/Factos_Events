@@ -3179,3 +3179,154 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 201ms (Views: 165.3ms | ActiveRecord: 18.6ms)
 
 
+Started POST "/event" for 127.0.0.1 at 2017-09-07 19:10:58 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#order as */*
+Can't verify CSRF token authenticity.
+  Rendering event/order.json.jbuilder
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."published" = $1[0m  [["published", "t"]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 22]]
+  Rendered event/order.json.jbuilder (134.8ms)
+Completed 200 OK in 161ms (Views: 127.9ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/users/14" for 127.0.0.1 at 2017-09-07 19:11:05 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 14]]
+  Rendered users/show.json.jbuilder (11.8ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (Can't merge [{"event_id"=>17}] into {"id"=>14, "provider"=>"email", "uid"=>"gretchen@effertzdare.co", "name"=>"Lyda Ondricka", "nickname"=>nil, "image"=>nil, "email"=>"gretchen@effertzdare.co"}):
+     5: json.nickname @user.nickname
+     6: json.image @user.image
+     7: json.email @user.email
+     8: json.array! @user.events do |event|
+     9:   json.event_id event.id
+    10: end
+  
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder___3342089959284008370_70139198415640'
+Started GET "/users/14" for 127.0.0.1 at 2017-09-07 19:11:39 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."user_id" = $1 LIMIT $2[0m  [["user_id", 14], ["LIMIT", 11]]
+  Rendered users/show.json.jbuilder (11.9ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Event::ActiveRecord_Associations_CollectionProxy:0x00000004db10b0>
+Did you mean?  ids):
+    5: json.nickname @user.nickname
+    6: json.image @user.image
+    7: json.email @user.email
+    8: json.event @user.events.id
+  
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder___3342089959284008370_70139131272540'
+Started GET "/users/14" for 127.0.0.1 at 2017-09-07 19:11:54 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 14]]
+  Rendered users/show.json.jbuilder (6.5ms)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/14" for 127.0.0.1 at 2017-09-07 19:17:11 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 14]]
+  Rendered users/show.json.jbuilder (4.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Can't merge [{"event_id"=>17}] into {"id"=>14, "provider"=>"email", "uid"=>"gretchen@effertzdare.co", "name"=>"Lyda Ondricka", "nickname"=>nil, "image"=>nil, "email"=>"gretchen@effertzdare.co"}):
+     5: json.nickname @user.nickname
+     6: json.image @user.image
+     7: json.email @user.email
+     8: json.array! @user.events do |event|
+     9:   json.event_id event.id
+    10: end
+  
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder___3342089959284008370_70139198669780'
+Started GET "/users/14" for 127.0.0.1 at 2017-09-07 19:18:00 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 14]]
+  Rendered users/show.json.jbuilder (7.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     6: json.image @user.image
+     7: json.email @user.email
+     8: json.array! @user.events do |json, event|
+     9:   json.event_id event.id
+    10: end
+  
+app/views/users/show.json.jbuilder:9:in `block in _app_views_users_show_json_jbuilder___3342089959284008370_43113120'
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder___3342089959284008370_43113120'
+Started GET "/users/14" for 127.0.0.1 at 2017-09-07 19:18:27 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 14]]
+  Rendered users/show.json.jbuilder (8.2ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `event_id' for nil:NilClass):
+     6: json.image @user.image
+     7: json.email @user.email
+     8: json.array! @user.events do |event, json|
+     9:   json.event_id event.id
+    10: end
+  
+app/views/users/show.json.jbuilder:9:in `block in _app_views_users_show_json_jbuilder___3342089959284008370_16645900'
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder___3342089959284008370_16645900'
+Started GET "/users/14" for 127.0.0.1 at 2017-09-07 19:18:47 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 14]]
+  Rendered users/show.json.jbuilder (6.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     6: json.image @user.image
+     7: json.email @user.email
+     8: json.array! @user.events do |json, event|
+     9:   json.event_id event.id
+    10: end
+  
+app/views/users/show.json.jbuilder:9:in `block in _app_views_users_show_json_jbuilder___3342089959284008370_45201060'
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder___3342089959284008370_45201060'
+Started GET "/users/14" for 127.0.0.1 at 2017-09-07 19:23:39 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 14]]
+  Rendered users/show.json.jbuilder (3.8ms)
+Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 0.8ms)
+
+

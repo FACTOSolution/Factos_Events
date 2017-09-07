@@ -5,4 +5,6 @@ json.name @user.name
 json.nickname @user.nickname
 json.image @user.image
 json.email @user.email
-json.event @user.events
+json.events @user.events do |event|
+  json.event_id event.id
+end
