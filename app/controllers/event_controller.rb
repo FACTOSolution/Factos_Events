@@ -63,7 +63,7 @@ class EventController < ApplicationController
   end
 
   def search_params
-    params.permit(:name, :user_id)
+    params.permit(:name, :user_id, :date, :published)
   end
 
   def ordering_params

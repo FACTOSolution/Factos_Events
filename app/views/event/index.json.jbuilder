@@ -9,4 +9,7 @@ json.array! @events do |event|
     json.date event.date
     json.images event.images
     json.user event.user.id
+    json.published event.published
+    json.lat event.lat
+    json.long event.long
 end
