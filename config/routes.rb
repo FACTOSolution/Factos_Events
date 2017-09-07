@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get :publish
     resources :comment
   end
-  resources :academic, controller: 'events', type: 'Academic', only: [:index, :show]
-  resources :cultural, controller: 'events', type: 'Cultural', only: [:index, :show]
+  resources :academic, controller: 'event', type: 'Academic', only: [:index, :show]
+  resources :cultural, controller: 'event', type: 'Cultural', only: [:index, :show]
   resources :users, only: [:show]
 end
