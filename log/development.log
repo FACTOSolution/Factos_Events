@@ -3407,3 +3407,18 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 2.1ms)
 
 
+Started POST "/event" for 127.0.0.1 at 2017-09-22 00:24:40 -0300
+  [1m[35m (30.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#order as */*
+  Parameters: {"date"=>"asc"}
+Can't verify CSRF token authenticity.
+  Rendering event/order.json.jbuilder
+  [1m[36mEvent Load (28.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."published" = $1 ORDER BY "events"."date" ASC[0m  [["published", "t"]]
+  [1m[36mUser Load (27.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (69.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 21]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 22]]
+  Rendered event/order.json.jbuilder (231.5ms)
+Completed 200 OK in 275ms (Views: 102.6ms | ActiveRecord: 162.3ms)
+
+
