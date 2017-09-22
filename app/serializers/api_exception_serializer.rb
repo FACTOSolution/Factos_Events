@@ -1,3 +1,3 @@
-class ApiExceptionSerilizer < ActiveModel::Serializer
+class ApiExceptionSerializer < ActiveModel::Serializer
   attributes :status, :code, :message
 end

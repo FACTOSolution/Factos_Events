@@ -3422,3 +3422,240 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 275ms (Views: 102.6ms | ActiveRecord: 162.3ms)
 
 
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 00:55:23 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#create as */*
+  Parameters: {"date"=>"asc"}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/event_controller.rb:57:in `event_params'
+app/controllers/event_controller.rb:18:in `create'
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 00:55:45 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{}}
+Can't verify CSRF token authenticity.
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: event):
+  
+app/controllers/event_controller.rb:57:in `event_params'
+app/controllers/event_controller.rb:18:in `create'
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 00:56:23 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 4.2ms)
+
+
+  
+LoadError (Unable to autoload constant ApiExceptionSerializer, expected /home/pedrohenique/Factos/Factos_Events/app/serializers/api_exception_serializer.rb to define it):
+  
+app/controllers/application_controller.rb:8:in `render_error_response'
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 00:56:53 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ApiExceptionSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 56ms (Views: 35.6ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 00:59:37 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3", "name"=>"Event"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+No template found for EventController#create, rendering head :no_content
+Completed 204 No Content in 375ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 01:08:26 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3", "name"=>"Event", "address"=>"Rua 100", "type"=>"Academic", "contact"=>"Assf", "user_id"=>1, "lat"=>"904.34", "long"=>"459.6", "date"=>"2017-08-30T19:47:12.403Z", "published"=>true}}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :published
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (40.1ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "date", "address", "type", "user_id", "lat", "long") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["created_at", "2017-09-22 04:08:26.162657"], ["updated_at", "2017-09-22 04:08:26.162657"], ["name", "Event"], ["description", "DFASF"], ["value", "12.3"], ["contact", "Assf"], ["date", "2017-08-30 19:47:12.403000"], ["address", "Rua 100"], ["type", "Academic"], ["user_id", 1], ["lat", "904.34"], ["long", "459.6"]]
+  [1m[35m (22.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/event/23
+Completed 302 Found in 140ms (ActiveRecord: 66.5ms)
+
+
+Started GET "/event/23" for 127.0.0.1 at 2017-09-22 01:08:26 -0300
+Processing by EventController#show as */*
+  Parameters: {"id"=>"23"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering event/show.json.jbuilder
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 23]]
+  Rendered event/show.json.jbuilder (54.1ms)
+Completed 200 OK in 63ms (Views: 55.2ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 01:13:33 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3", "name"=>"Event", "address"=>"Rua 100", "type"=>"Academic", "contact"=>"Assf", "user_id"=>1, "lat"=>"904.34", "long"=>"459.6", "date"=>"2017-08-30T19:47:12.403Z", "published"=>true, "image_attributes"=>[{"image_url"=>"Lorem.com.br"}]}}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :published
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 3.9ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'image_attributes' for Academic.):
+  
+app/controllers/event_controller.rb:18:in `create'
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 01:14:09 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3", "name"=>"Event", "address"=>"Rua 100", "type"=>"Academic", "contact"=>"Assf", "user_id"=>1, "lat"=>"904.34", "long"=>"459.6", "date"=>"2017-08-30T19:47:12.403Z", "published"=>true, "image_attributes"=>[{"image_url"=>"Lorem.com.br"}]}}
+Can't verify CSRF token authenticity.
+Unpermitted parameters: :published, :image_attributes
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "date", "address", "type", "user_id", "lat", "long") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["created_at", "2017-09-22 04:14:09.255328"], ["updated_at", "2017-09-22 04:14:09.255328"], ["name", "Event"], ["description", "DFASF"], ["value", "12.3"], ["contact", "Assf"], ["date", "2017-08-30 19:47:12.403000"], ["address", "Rua 100"], ["type", "Academic"], ["user_id", 1], ["lat", "904.34"], ["long", "459.6"]]
+  [1m[35m (23.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/event/24
+Completed 302 Found in 688ms (ActiveRecord: 33.2ms)
+
+
+Started GET "/event/24" for 127.0.0.1 at 2017-09-22 01:14:09 -0300
+Processing by EventController#show as */*
+  Parameters: {"id"=>"24"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering event/show.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 24]]
+  Rendered event/show.json.jbuilder (25.4ms)
+Completed 200 OK in 38ms (Views: 30.4ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 01:15:55 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3", "name"=>"Event", "address"=>"Rua 100", "type"=>"Academic", "contact"=>"Assf", "user_id"=>1, "lat"=>"904.34", "long"=>"459.6", "date"=>"2017-08-30T19:47:12.403Z", "published"=>true, "image_attributes"=>["Lorem.com.br"]}}
+Can't verify CSRF token authenticity.
+Unpermitted parameters: :published, :image_attributes
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "date", "address", "type", "user_id", "lat", "long") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["created_at", "2017-09-22 04:16:06.132249"], ["updated_at", "2017-09-22 04:16:06.132249"], ["name", "Event"], ["description", "DFASF"], ["value", "12.3"], ["contact", "Assf"], ["date", "2017-08-30 19:47:12.403000"], ["address", "Rua 100"], ["type", "Academic"], ["user_id", 1], ["lat", "904.34"], ["long", "459.6"]]
+  [1m[35m (24.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/event/25
+Completed 302 Found in 125ms (ActiveRecord: 32.8ms)
+
+
+Started GET "/event/25" for 127.0.0.1 at 2017-09-22 01:16:06 -0300
+Processing by EventController#show as */*
+  Parameters: {"id"=>"25"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering event/show.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 25]]
+  Rendered event/show.json.jbuilder (14.0ms)
+Completed 200 OK in 22ms (Views: 16.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 01:16:18 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3", "name"=>"Event", "address"=>"Rua 100", "type"=>"Academic", "contact"=>"Assf", "user_id"=>1, "lat"=>"904.34", "long"=>"459.6", "date"=>"2017-08-30T19:47:12.403Z", "published"=>true, "images_attributes"=>["Lorem.com.br"]}}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :published
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/event_controller.rb:18:in `create'
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 01:16:39 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3", "name"=>"Event", "address"=>"Rua 100", "type"=>"Academic", "contact"=>"Assf", "user_id"=>1, "lat"=>"904.34", "long"=>"459.6", "date"=>"2017-08-30T19:47:12.403Z", "published"=>"true", "images_attributes"=>["Lorem.com.br"]}}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :published
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/event_controller.rb:18:in `create'
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 01:17:04 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3", "name"=>"Event", "address"=>"Rua 100", "type"=>"Academic", "contact"=>"Assf", "user_id"=>1, "lat"=>"904.34", "long"=>"459.6", "date"=>"2017-08-30T19:47:12.403Z", "images_attributes"=>["Lorem.com.br"]}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 5.4ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/event_controller.rb:18:in `create'
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 01:17:27 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3", "name"=>"Event", "address"=>"Rua 100", "type"=>"Academic", "contact"=>"Assf", "user_id"=>"1", "lat"=>"904.34", "long"=>"459.6", "date"=>"2017-08-30T19:47:12.403Z", "images_attributes"=>["Lorem.com.br"]}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/event_controller.rb:18:in `create'
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 01:18:36 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3", "name"=>"Event", "address"=>"Rua 100", "type"=>"Academic", "contact"=>"Assf", "user_id"=>"1", "lat"=>"904.34", "long"=>"459.6", "date"=>"2017-08-30T19:47:12.403Z"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "date", "address", "type", "user_id", "lat", "long") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["created_at", "2017-09-22 04:18:36.601089"], ["updated_at", "2017-09-22 04:18:36.601089"], ["name", "Event"], ["description", "DFASF"], ["value", "12.3"], ["contact", "Assf"], ["date", "2017-08-30 19:47:12.403000"], ["address", "Rua 100"], ["type", "Academic"], ["user_id", 1], ["lat", "904.34"], ["long", "459.6"]]
+  [1m[35m (25.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/event/26
+Completed 302 Found in 642ms (ActiveRecord: 30.0ms)
+
+
+Started GET "/event/26" for 127.0.0.1 at 2017-09-22 01:18:37 -0300
+Processing by EventController#show as */*
+  Parameters: {"id"=>"26"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering event/show.json.jbuilder
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.9ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 26]]
+  Rendered event/show.json.jbuilder (15.1ms)
+Completed 200 OK in 25ms (Views: 16.0ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/event/add" for 127.0.0.1 at 2017-09-22 01:21:28 -0300
+Processing by EventController#create as */*
+  Parameters: {"event"=>{"description"=>"DFASF", "value"=>"12.3", "name"=>"Event", "address"=>"Rua 100", "type"=>"Academic", "contact"=>"Assf", "user_id"=>"1", "lat"=>"904.34", "long"=>"459.6", "date"=>"2017-08-30T19:47:12.403Z", "images_attributes"=>[{"image_url"=>"Lorem.com.br"}]}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "name", "description", "value", "contact", "date", "address", "type", "user_id", "lat", "long") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["created_at", "2017-09-22 04:21:38.967610"], ["updated_at", "2017-09-22 04:21:38.967610"], ["name", "Event"], ["description", "DFASF"], ["value", "12.3"], ["contact", "Assf"], ["date", "2017-08-30 19:47:12.403000"], ["address", "Rua 100"], ["type", "Academic"], ["user_id", 1], ["lat", "904.34"], ["long", "459.6"]]
+  [1m[35mSQL (19.1ms)[0m  [1m[32mINSERT INTO "images" ("image_url", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image_url", "Lorem.com.br"], ["event_id", 27], ["created_at", "2017-09-22 04:21:38.970856"], ["updated_at", "2017-09-22 04:21:38.970856"]]
+  [1m[35m (37.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/event/27
+Completed 302 Found in 172ms (ActiveRecord: 69.0ms)
+
+
+Started GET "/event/27" for 127.0.0.1 at 2017-09-22 01:21:39 -0300
+Processing by EventController#show as */*
+  Parameters: {"id"=>"27"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  Rendering event/show.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 27]]
+  Rendered event/show.json.jbuilder (6.9ms)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 1.2ms)
+
+
