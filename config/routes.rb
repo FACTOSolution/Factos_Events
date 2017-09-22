@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'auth'
   #devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  resources :event, except: :index do
+  resources :event, except: [:index, :create] do
     collection do
       post :search
       post '', action: 'order'
     end
+    post :add, action: 'create', on: :collection
     get :publish
     resources :comment
   end

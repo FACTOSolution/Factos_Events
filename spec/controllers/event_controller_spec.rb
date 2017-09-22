@@ -4,18 +4,18 @@ require 'pp'
 RSpec.describe EventController, type: :controller do
   login_user
 
-  describe "GET #index" do
+  describe "POST #order" do
     context "Return all the events" do
-      let(:event) { create(:event) }
+      let(:event) { create(:cultural_published_event) }
 
-      before { get :index }
+      before { post :order }
 
       it "assigns @events properly" do
         expect(assigns(:events)).to eq([event])
       end
 
       it "renders the index view" do
-        expect(response).to render_template(:index)
+        expect(response).to render_template(:order)
       end
 
       it "returns a successful response" do
@@ -60,23 +60,10 @@ RSpec.describe EventController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    before { get :new }
-
-    it "assigns to a new event" do
-      expect(assigns(:event)).to be_a_new(Event)
-    end
-
-    it "renders the new view" do
-      expect(response).to render_template(:new)
-    end
-  end
-
   describe "POST #create" do
     context "with valid attributes" do
       let(:user) { create(:user)}
-      let(:event_attributes) { attributes_for(:event, user: user).merge({ user_id: user.id }) }
-
+      let(:event_attributes) { attributes_for(:academic_published_event, user: user).merge({ user_id: user.id }) }
 
       it "creates a new event" do
         expect{ post :create, params: { event: event_attributes }
@@ -97,10 +84,6 @@ RSpec.describe EventController, type: :controller do
       }.to_not change(Event, :count)
       end
 
-      it "re-renders the new template" do
-        post :create, params: { event: event_attributes }
-        expect(response).to render_template(:new)
-      end
     end
   end
 
@@ -153,10 +136,6 @@ RSpec.describe EventController, type: :controller do
         expect(event.name).to_not eq("Larry")
       end
 
-      it "re-renders the edit method" do
-        put :update, params: { id: event.id, event: invalid_event }
-        expect(response).to render_template(:edit)
-      end
     end
   end
 

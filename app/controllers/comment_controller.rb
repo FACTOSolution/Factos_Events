@@ -9,11 +9,15 @@ class CommentController < ApplicationController
     @comment = Comment.new
   end
 
+  def show
+    @comment = Comment.find(params[:id])
+  end
+
   def create
     @event = Event.find(params[:event_id])
     @comment = @event.comments.build(comment_params)
     if @comment.save
-      redirect_to event_index_url, flash: { success: t('flash.create.success', entity: Comment) }
+      redirect_to @event, flash: { success: t('flash.create.success', entity: Comment) }
     else
       render :new
     end

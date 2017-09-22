@@ -3330,3 +3330,80 @@ Processing by UsersController#show as */*
 Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 0.8ms)
 
 
+Started POST "/event" for 127.0.0.1 at 2017-09-08 13:20:40 -0300
+  [1m[35m (54.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#order as */*
+  Parameters: {"date"=>"desc"}
+Can't verify CSRF token authenticity.
+  Rendering event/order.json.jbuilder
+  [1m[36mEvent Load (35.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."published" = $1 ORDER BY "events"."date" DESC[0m  [["published", "t"]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (67.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 22]]
+  Rendered event/order.json.jbuilder (430.4ms)
+Completed 200 OK in 520ms (Views: 263.9ms | ActiveRecord: 231.4ms)
+
+
+Started POST "/event" for 127.0.0.1 at 2017-09-08 13:20:54 -0300
+Processing by EventController#order as */*
+  Parameters: {"date"=>"asc"}
+Can't verify CSRF token authenticity.
+  Rendering event/order.json.jbuilder
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."published" = $1 ORDER BY "events"."date" ASC[0m  [["published", "t"]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 22]]
+  Rendered event/order.json.jbuilder (11.5ms)
+Completed 200 OK in 25ms (Views: 15.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/event" for 127.0.0.1 at 2017-09-08 13:21:10 -0300
+Processing by EventController#order as */*
+Can't verify CSRF token authenticity.
+  Rendering event/order.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."published" = $1[0m  [["published", "t"]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 22]]
+  Rendered event/order.json.jbuilder (13.5ms)
+Completed 200 OK in 23ms (Views: 18.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/event" for 127.0.0.1 at 2017-09-08 13:23:27 -0300
+Processing by EventController#order as */*
+Can't verify CSRF token authenticity.
+  Rendering event/order.json.jbuilder
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."published" = $1[0m  [["published", "t"]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 22]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 21]]
+  Rendered event/order.json.jbuilder (22.3ms)
+Completed 200 OK in 31ms (Views: 25.8ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/event" for 127.0.0.1 at 2017-09-08 13:23:37 -0300
+Processing by EventController#order as */*
+  Parameters: {"date"=>"asc"}
+Can't verify CSRF token authenticity.
+  Rendering event/order.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."published" = $1 ORDER BY "events"."date" ASC[0m  [["published", "t"]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 21]]
+  [1m[36mImage Load (0.9ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 22]]
+  Rendered event/order.json.jbuilder (20.3ms)
+Completed 200 OK in 36ms (Views: 28.9ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/event" for 127.0.0.1 at 2017-09-08 13:23:49 -0300
+Processing by EventController#order as */*
+  Parameters: {"date"=>"desc"}
+Can't verify CSRF token authenticity.
+  Rendering event/order.json.jbuilder
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."published" = $1 ORDER BY "events"."date" DESC[0m  [["published", "t"]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 22]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 21]]
+  Rendered event/order.json.jbuilder (17.0ms)
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 2.1ms)
+
+

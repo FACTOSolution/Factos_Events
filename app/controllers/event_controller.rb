@@ -18,8 +18,6 @@ class EventController < ApplicationController
     @event = Event.new(event_params)
     if @event.save
       redirect_to event_path(@event), flash: { success: t('flash.create.success', entity: Event)}
-    else
-      render :new
     end
   end
 
@@ -37,8 +35,6 @@ class EventController < ApplicationController
     @event = Event.find(params[:id])
     if @event.update_attributes(event_params)
       redirect_to @event, flash: { success: t('flash.update.success', entity: Event)}
-    else
-      render :edit
     end
   end
 
@@ -59,7 +55,7 @@ class EventController < ApplicationController
 
   def event_params
     params.require(:event).permit(:date, :name, :description, :image_url,
-      :value, :address, :type, :contact, :user_id)
+      :value, :address, :type, :contact, :user_id, :lat, :long)
   end
 
   def search_params
