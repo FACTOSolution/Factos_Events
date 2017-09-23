@@ -3,7 +3,8 @@ class EventController < ApplicationController
   #before_action :authenticate_user!
 
   def index
-    @events = Event.filter(params.slice(:type))
+    @events = Event.filter(params.slice(:type)).paginate(page: params[:page],
+      per_page: 2)
   end
 
   def show
@@ -48,7 +49,8 @@ class EventController < ApplicationController
   end
 
   def order
-    @events = Event.ordered(ordering_params).published
+    @events = Event.ordered(ordering_params).published.paginate(page: params[:page],
+      per_page: 10)
   end
 
   private

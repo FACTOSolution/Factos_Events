@@ -3659,3 +3659,279 @@ Processing by EventController#show as */*
 Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 1.2ms)
 
 
+Started POST "/academic?page=1" for 127.0.0.1 at 2017-09-23 12:33:45 -0300
+  [1m[35m (65.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/academic"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/academic?page=1" for 127.0.0.1 at 2017-09-23 12:34:06 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"1", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (46.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 0]]
+  [1m[36mUser Load (27.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mImage Load (65.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 10]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 11]]
+  Rendered event/index.json.jbuilder (300.9ms)
+Completed 200 OK in 355ms (Views: 143.2ms | ActiveRecord: 196.3ms)
+
+
+Started GET "/academic?page=2" for 127.0.0.1 at 2017-09-23 12:34:13 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"2", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 2]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 12]]
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 13]]
+  Rendered event/index.json.jbuilder (25.4ms)
+Completed 200 OK in 35ms (Views: 27.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:34:18 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 14]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 15]]
+  Rendered event/index.json.jbuilder (15.9ms)
+Completed 200 OK in 25ms (Views: 18.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:34:55 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (36.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."type" = $1[0m  [["type", "Academic"]]
+  Rendered event/index.json.jbuilder (66.2ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 38.1ms)
+
+
+  
+ActionView::Template::Error (Failed to add "next" property to an array):
+    13:     json.lat event.lat
+    14:     json.long event.long
+    15: end
+    16: json.next @events.next_page
+  
+app/views/event/index.json.jbuilder:16:in `_app_views_event_index_json_jbuilder___893432389405172658_47438960'
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:36:05 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered event/index.json.jbuilder (353.2ms)
+Completed 500 Internal Server Error in 360ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `events' for #<#<Class:0x00000006285a90>:0x007f76b41dfa38>
+Did you mean?  @events):
+    13:     json.lat event.lat
+    14:     json.long event.long
+    15: end
+    16: json.next events.next_page
+  
+app/views/event/index.json.jbuilder:16:in `_app_views_event_index_json_jbuilder___893432389405172658_70073902392160'
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:38:04 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."type" = $1[0m  [["type", "Academic"]]
+  Rendered event/index.json.jbuilder (13.5ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (Failed to add "next_page" property to an array):
+    13:     json.lat event.lat
+    14:     json.long event.long
+    15: end
+    16: json.next_page @events.next_page
+  
+app/views/event/index.json.jbuilder:16:in `_app_views_event_index_json_jbuilder___893432389405172658_55012760'
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:38:16 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."type" = $1[0m  [["type", "Academic"]]
+  Rendered event/index.json.jbuilder (13.8ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (Failed to add "next" property to an array):
+    13:     json.lat event.lat
+    14:     json.long event.long
+    15: end
+    16: json.next @events.next_page
+  
+app/views/event/index.json.jbuilder:16:in `_app_views_event_index_json_jbuilder___893432389405172658_55476520'
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:38:25 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."type" = $1[0m  [["type", "Academic"]]
+  Rendered event/index.json.jbuilder (13.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (Failed to add "next_page" property to an array):
+    13:     json.lat event.lat
+    14:     json.long event.long
+    15: end
+    16: json.next_page @events.next_page
+  
+app/views/event/index.json.jbuilder:16:in `_app_views_event_index_json_jbuilder___893432389405172658_52103500'
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:40:54 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered event/index.json.jbuilder (11.3ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (Failed to add "next_page" property to an array):
+    13:     json.lat event.lat
+    14:     json.long event.long
+    15: end
+    16: json.next_page @events.current_page
+  
+app/views/event/index.json.jbuilder:16:in `_app_views_event_index_json_jbuilder___893432389405172658_70073801479700'
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:41:15 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered event/index.json.jbuilder (11.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (Failed to add "dk" property to an array):
+    13:     json.lat event.lat
+    14:     json.long event.long
+    15: end
+    16: json.dk @events.current_page
+  
+app/views/event/index.json.jbuilder:16:in `_app_views_event_index_json_jbuilder___893432389405172658_51553860'
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:41:57 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."type" = $1[0m  [["type", "Academic"]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."event_id" = $1 LIMIT $2[0m  [["event_id", 14], ["LIMIT", 11]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."event_id" = $1 LIMIT $2[0m  [["event_id", 15], ["LIMIT", 11]]
+  Rendered event/index.json.jbuilder (15.4ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (Can't merge [{"event_id"=>14, "name"=>"Ms. Noe Kautzer", "description"=>"Nesciunt voluptate et enim provident enim fugiat.", "value"=>#<BigDecimal:3d50040,'0.7703E2',18(18)>, "address"=>"Flatley Curve", "contact"=>"kurt_schuster@witting.biz", "type"=>"Academic", "date"=>Mon, 28 Aug 2017 00:00:00 UTC +00:00, "images"=>#<ActiveRecord::Associations::CollectionProxy []>, "user"=>11, "published"=>false, "lat"=>nil, "long"=>nil}, {"event_id"=>15, "name"=>"Idella Collins", "description"=>"Commodi dolore eum omnis aspernatur illo odio.", "value"=>#<BigDecimal:3d1c678,'0.3031E2',18(18)>, "address"=>"Linnea Grove", "contact"=>"everette@uptonbednar.net", "type"=>"Academic", "date"=>Sun, 27 Aug 2017 00:00:00 UTC +00:00, "images"=>#<ActiveRecord::Associations::CollectionProxy []>, "user"=>12, "published"=>false, "lat"=>nil, "long"=>nil}] into {"next_page"=>4}):
+    1: json.next_page @events.next_page
+    2: json.array! @events do |event|
+    3:     json.event_id event.id
+    4:     json.name event.name
+    5:     json.description event.description
+  
+app/views/event/index.json.jbuilder:2:in `_app_views_event_index_json_jbuilder___893432389405172658_32491060'
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:53:06 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."type" = $1[0m  [["type", "Academic"]]
+  Rendered event/index.json.jbuilder (114.4ms)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 11.7ms)
+
+
+  
+ActionView::Template::Error (Failed to add "merge" property to an array):
+    13:     json.lat event.lat
+    14:     json.long event.long
+    15: end
+    16: json.merge @events.next_page
+  
+app/views/event/index.json.jbuilder:16:in `_app_views_event_index_json_jbuilder__2747970804156016970_70251203940040'
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:54:47 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 14]]
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 15]]
+  Rendered event/index.json.jbuilder (24.6ms)
+Completed 200 OK in 31ms (Views: 24.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/academic?page=3" for 127.0.0.1 at 2017-09-23 12:56:27 -0300
+Processing by EventController#index as */*
+  Parameters: {"page"=>"3", "type"=>"Academic"}
+  Rendering event/index.json.jbuilder
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."type" = $1[0m  [["type", "Academic"]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."type" = $1 LIMIT $2 OFFSET $3[0m  [["type", "Academic"], ["LIMIT", 2], ["OFFSET", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 14]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 15]]
+  Rendered event/index.json.jbuilder (13.8ms)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 2.4ms)
+
+

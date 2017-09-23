@@ -22,6 +22,7 @@ gem 'devise_token_auth'
 gem 'factory_girl_rails'
 gem 'faker'
 gem 'active_model_serializers'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

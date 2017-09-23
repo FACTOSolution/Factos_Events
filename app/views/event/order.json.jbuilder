@@ -1,4 +1,7 @@
-json.array! @events do |event|
+json.pagination do
+  json.next_link @events.next_page
+end
+json.events @events do |event|
     json.event_id event.id
     json.name event.name
     json.description event.description

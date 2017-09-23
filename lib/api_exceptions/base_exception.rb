@@ -7,6 +7,12 @@ module ApiExceptions
     ERROR_CODE_MAP = {
       "CreateEventError::MissingNameError" =>
         ERROR_DESCRIPTION.call(3000, 'Event need a name to be created'),
+      "CreateEventError::MissingDateError" =>
+        ERROR_DESCRIPTION.call(3000, 'Event need a date to be created'),
+      "CreateEventError::MissingValueError" =>
+        ERROR_DESCRIPTION.call(3000, 'Event need a value to be created'),
+      "CreateEventError::MissingDescriptionError"  =>
+        ERROR_DESCRIPTION.call(3000, 'Event need a description to be created')
     }
 
     def initialize
