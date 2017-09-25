@@ -4039,3 +4039,167 @@ Did you mean?  to_yaml
   
 app/views/users/show.json.jbuilder:9:in `block in _app_views_users_show_json_jbuilder__409408857917498767_42747240'
 app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder__409408857917498767_42747240'
+Started GET "/users/9" for 127.0.0.1 at 2017-09-24 22:24:19 -0300
+  [1m[35m (37.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (79.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (30.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (124.9ms)
+Completed 200 OK in 315ms (Views: 111.1ms | ActiveRecord: 162.0ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2017-09-24 22:25:04 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (4.6ms)
+Completed 200 OK in 20ms (Views: 14.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2017-09-24 22:25:18 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (3.3ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2017-09-24 22:25:30 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (36.2ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_a' for #<Academic:0x00000007262030>
+Did you mean?  to_yaml
+               to_s):
+     6: json.image @user.image
+     7: json.email @user.email
+     8: json.events @user.events do |event|
+     9:   json.array! event
+    10: end
+  
+app/views/users/show.json.jbuilder:9:in `block in _app_views_users_show_json_jbuilder___1374299732565460180_70008906519200'
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder___1374299732565460180_70008906519200'
+Started GET "/users/9" for 127.0.0.1 at 2017-09-24 22:25:44 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (15.2ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `event_id' for #<Event::ActiveRecord_Associations_CollectionProxy:0x000000055d1308>):
+     6: json.image @user.image
+     7: json.email @user.email
+     8: json.events @user.events do |event|
+     9:   json.array! @user.events.event_id
+    10: end
+  
+app/views/users/show.json.jbuilder:9:in `block in _app_views_users_show_json_jbuilder___1374299732565460180_45294660'
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder___1374299732565460180_45294660'
+Started GET "/users/9" for 127.0.0.1 at 2017-09-24 22:25:52 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (5.0ms)
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2017-09-24 22:26:09 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (6.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (Can't merge [#<Academic id: 12, created_at: "2017-08-29 19:53:55", updated_at: "2017-08-29 19:53:55", name: "Daphne Schuppe MD", description: "Velit sint odit dolorum sit qui sunt.", value: #<BigDecimal:75b44b8,'0.8257E2',18(18)>, contact: "ariane@parker.biz", date: "2017-08-28 00:00:00", address: "Myrtis Harbors", type: "Academic", user_id: 9, published: false, lat: nil, long: nil>] into {"id"=>9, "provider"=>"email", "uid"=>"barney_moriette@stanton.net", "name"=>"Marcelle Muller", "nickname"=>nil, "image"=>nil, "email"=>"barney_moriette@stanton.net"}):
+    6: json.image @user.image
+    7: json.email @user.email
+    8: 
+    9:   json.array! @user.events
+  
+app/views/users/show.json.jbuilder:9:in `_app_views_users_show_json_jbuilder___1374299732565460180_61843700'
+Started GET "/users/9" for 127.0.0.1 at 2017-09-24 22:26:19 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (3.4ms)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2017-09-24 22:28:09 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (9.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_a' for #<Academic:0x000000067d9640>
+Did you mean?  to_yaml
+               to_s):
+     6: json.image @user.image
+     7: json.email @user.email
+     8: json.events @user.events do |event|
+     9:   json.array! event
+    10: end
+  
+app/views/users/show.json.jbuilder:9:in `block in _app_views_users_show_json_jbuilder___1374299732565460180_54616240'
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder___1374299732565460180_54616240'
+Started GET "/users/9" for 127.0.0.1 at 2017-09-24 22:35:14 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (22.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddStatusFieldToEvenht (20170925015937)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3125981644824648645);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddStatusFieldToEvenht (20170925015937)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (151.7ms)[0m  [1m[35mALTER TABLE "events" ADD "event_status" integer[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170925015937"]]
+  [1m[35m (89.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (36.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3125981644824648645)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "events" SET "updated_at" = $1, "event_status" = $2 WHERE "events"."id" = $3[0m  [["updated_at", "2017-09-25 02:03:01.085385"], ["event_status", 0], ["id", 22]]
+  [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m

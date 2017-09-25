@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     post :add, action: 'create', on: :collection
     get :publish
+    get :reject
     resources :comment
   end
   resources :academic, controller: 'event', type: 'Academic', only: [:index, :show]

@@ -45,7 +45,15 @@ class EventController < ApplicationController
 
   def publish
     @event = Event.find(params[:event_id])
-    @event.toggle!(:published)
+    @event.published = true
+    @event.event_status = 'approved'
+    @event.save
+  end
+
+  def reject
+    @event = Event.find(params[:event_id])
+    @event.event_status = 'rejected'
+    @event.save
   end
 
   def order

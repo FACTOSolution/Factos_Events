@@ -166,12 +166,36 @@ RSpec.describe EventController, type: :controller do
 
   describe "GET #publish" do
     context "With a unpublished event" do
-      let(:event) { create(:event) }
+      let(:events) { create_list(:event, 2) }
 
       it "turn the publish to true" do
-        get :publish, format: :json,params: { event_id: event.id }
-        event.reload
-        expect(event.published).to eq(true)
+        get :publish, format: :json,params: { event_id: events[0].id }
+        events[0].reload
+        expect(events[0].published).to eq(true)
+      end
+
+      it "set the event_status to approved" do
+        get :publish, format: :json, params: { event_id: events[1].id }
+        events[1].reload
+        expect(events[1].event_status).to eq("approved")
+      end
+    end
+  end
+
+  describe "GET #reject" do
+    context "with a unpublished event" do
+      let(:events) { create_list(:event, 2) }
+
+      it "turn the publish to true" do
+        get :reject, format: :json,params: { event_id: events[0].id }
+        events[0].reload
+        expect(events[0].published).to eq(false)
+      end
+
+      it "set the event_status to approved" do
+        get :reject, format: :json, params: { event_id: events[1].id }
+        events[1].reload
+        expect(events[1].event_status).to eq("rejected")
       end
     end
   end
