@@ -4,7 +4,7 @@ class EventController < ApplicationController
 
   def index
     @events = Event.filter(params.slice(:type)).paginate(page: params[:page],
-      per_page: 2)
+      per_page: 10)
   end
 
   def show
@@ -64,7 +64,7 @@ class EventController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:date, :name, :description, :image_url,
+    params.require(:event).permit(:date, :name, :description,
       :value, :address, :type, :contact, :user_id, :lat, :long, images_attributes: [:image_url])
   end
 
