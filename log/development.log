@@ -3935,3 +3935,107 @@ Processing by EventController#index as */*
 Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 2.4ms)
 
 
+Started GET "/users/9" for 127.0.0.1 at 2017-09-23 12:58:46 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (70.2ms)
+Completed 200 OK in 141ms (Views: 73.7ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2017-09-23 13:02:34 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (4.7ms)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2017-09-23 13:03:08 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (20.1ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for #<Academic:0x007f1c5004be60>
+Did you mean?  tap):
+     6: json.image @user.image
+     7: json.email @user.email
+     8: json.events @user.events do |event|
+     9:   json.array! event do ev
+    10:     ev
+    11:   end
+    12: end
+  
+app/views/users/show.json.jbuilder:9:in `block in _app_views_users_show_json_jbuilder__409408857917498767_46882540'
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder__409408857917498767_46882540'
+Started GET "/users/9" for 127.0.0.1 at 2017-09-23 13:03:49 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (3.8ms)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2017-09-23 13:04:45 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (15.8ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_a' for #<Academic:0x0000000346f7c8>
+Did you mean?  to_yaml
+               to_s):
+     6: json.image @user.image
+     7: json.email @user.email
+     8: json.events @user.events do |event|
+     9:   json.array! event
+    10: end
+  
+app/views/users/show.json.jbuilder:9:in `block in _app_views_users_show_json_jbuilder__409408857917498767_27836180'
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder__409408857917498767_27836180'
+Started GET "/users/9" for 127.0.0.1 at 2017-09-23 13:05:00 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 9]]
+  Rendered users/show.json.jbuilder (7.3ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_a' for 12:Fixnum
+Did you mean?  to_yaml
+               to_param
+               to_c
+               to_d
+               to_r
+               to_i
+               to_f
+               to_s):
+     6: json.image @user.image
+     7: json.email @user.email
+     8: json.events @user.events do |event|
+     9:   json.array! event.id
+    10: end
+  
+app/views/users/show.json.jbuilder:9:in `block in _app_views_users_show_json_jbuilder__409408857917498767_42747240'
+app/views/users/show.json.jbuilder:8:in `_app_views_users_show_json_jbuilder__409408857917498767_42747240'
