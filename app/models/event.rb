@@ -19,4 +19,8 @@ class Event < ApplicationRecord
   def set_default_values
     self.event_status ||= 'pending'
   end
+
+  def self.future_events
+    where("date > ?", Date.today)
+  end
 end

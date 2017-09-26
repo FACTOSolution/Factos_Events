@@ -4552,3 +4552,54 @@ Unpermitted parameter: :event
 Completed 200 OK in 142ms (Views: 117.6ms | ActiveRecord: 14.2ms)
 
 
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+Started POST "/event" for 127.0.0.1 at 2017-09-26 16:19:44 -0300
+  [1m[35m (35.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#order as */*
+  Parameters: {"event"=>{}}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :event
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.4ms)
+
+
+  
+NoMethodError (undefined method `date' for #<Class:0x00000004c75f98>
+Did you mean?  update):
+  
+app/models/event.rb:24:in `future_events'
+app/controllers/event_controller.rb:60:in `order'
+Started POST "/event" for 127.0.0.1 at 2017-09-26 16:20:31 -0300
+  
+SyntaxError (/home/pedrohenique/Factos/Factos_Events/app/models/event.rb:24: syntax error, unexpected >=
+    where(date: >= Date.today)
+                  ^
+/home/pedrohenique/Factos/Factos_Events/app/models/event.rb:24: syntax error, unexpected ')', expecting keyword_end):
+  
+app/models/event.rb:24: syntax error, unexpected >=
+app/models/event.rb:24: syntax error, unexpected ')', expecting keyword_end
+Started POST "/event" for 127.0.0.1 at 2017-09-26 16:21:43 -0300
+Processing by EventController#order as */*
+  Parameters: {"event"=>{}}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :event
+  Rendering event/order.json.jbuilder
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."published" = $1 AND (date >= '2017-09-26') LIMIT $2 OFFSET $3[0m  [["published", "t"], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered event/order.json.jbuilder (39.5ms)
+Completed 200 OK in 86ms (Views: 42.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/event" for 127.0.0.1 at 2017-09-26 16:21:52 -0300
+Processing by EventController#order as */*
+  Parameters: {"event"=>{}}
+Can't verify CSRF token authenticity.
+Unpermitted parameter: :event
+  Rendering event/order.json.jbuilder
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."published" = $1 AND (date < '2017-09-26') LIMIT $2 OFFSET $3[0m  [["published", "t"], ["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mImage Load (61.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 21]]
+  [1m[36mUser Load (87.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 22]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered event/order.json.jbuilder (314.6ms)
+Completed 200 OK in 319ms (Views: 157.4ms | ActiveRecord: 159.9ms)
+
+
