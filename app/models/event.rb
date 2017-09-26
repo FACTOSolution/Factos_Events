@@ -21,6 +21,6 @@ class Event < ApplicationRecord
   end
 
   def self.future_events
-    where("date > ?", Date.today)
+    where("date >= ?", Date.today)
   end
 end
