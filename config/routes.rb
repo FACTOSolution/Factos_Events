@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :event, except: [:index, :create] do
     collection do
       post :search
-      post '', action: 'order'
+      get '', action: 'order'
     end
     post :add, action: 'create', on: :collection
     get :publish
