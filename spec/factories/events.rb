@@ -1,7 +1,7 @@
 include ActionDispatch::TestProcess
 FactoryGirl.define do
   factory :event, class: Academic do |f|
-    f.date { Faker::Date.between(2.days.ago, Date.today) }
+    f.date { Faker::Date.forward(10) }
     f.name { Faker::Name.name }
     f.description { Faker::Lorem.sentence }
     f.value { Faker::Number.decimal(2) }
