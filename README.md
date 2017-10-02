@@ -36,6 +36,90 @@ This is a project that aims to manage upgoing events at Universidade Federal do 
 | /auth | POST | Email registration. Requires email, password, and password_confirmation params.  |
 | /sign_in | POST | Email authentication. Requires email and password as params. This route will return a JSON representation of the User model on successful login along with the access-token and client in the header of the response. |
 
+### Examples Of Returned Data
+
+* /event
+```javascript
+[
+    {
+        "event_id": 30,
+        "name": "Makenna Reilly",
+        "description": "Amet porro esse quaerat aliquid.",
+        "value": "56.54",
+        "address": "Roberts Centers",
+        "contact": "owen@rippin.name",
+        "type": "Academic",
+        "date": "2017-10-02T00:00:00.000Z",
+        "images": [
+            "http://lorempixel.com/300/300"
+        ],
+        "status": "pending",
+        "user": 20,
+        "published": true,
+        "lat": "40.561791064605785",
+        "long": "14.530943974654548"
+    },
+    {
+        "event_id": 31,
+        "name": "Henry Collier",
+        "description": "Et cupiditate dolor vel.",
+        "value": "63.81",
+        "address": "Edythe Flat",
+        "contact": "jennie@ryan.info",
+        "type": "Academic",
+        "date": "2017-10-06T00:00:00.000Z",
+        "images": [
+            "http://lorempixel.com/300/300"
+        ],
+        "status": "pending",
+        "user": 21,
+        "published": true,
+        "lat": "13.390221663010323",
+        "long": "143.354924744708"
+    },
+  ]
+```
+
+* /users/:id
+```javascript
+{
+    "id": 20,
+    "provider": "email",
+    "uid": "randi@murphy.co",
+    "name": "Mathew Wyman",
+    "nickname": null,
+    "image": null,
+    "email": "randi@murphy.co",
+    "events": [
+        30
+    ]
+}
+```
+
+### Examples Of Sending Data
+
+* /event/add
+
+```javascript
+{
+ "event":{
+  "description": "DFASF",
+  "value": "12.3",
+  "name": "Event",
+  "address": "Rua 100",
+  "type": "Academic",
+  "contact": "Assf",
+  "user_id": "1",
+  "lat": "904.34",
+  "long": "459.6",
+  "date": "2017-08-30T19:47:12.403Z",
+  "images_attributes": [
+   {"image_url":"Lorem.com.br"}
+  ]
+ }
+}
+```
+
 ### Token Header Format
 
 The authentication information should be included by the client in the headers of each request. The headers follow the [RFC 6750 Bearer Token](http://tools.ietf.org/html/rfc6750) format:
