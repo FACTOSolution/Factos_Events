@@ -20,16 +20,21 @@ This is a project that aims to manage upgoing events at Universidade Federal do 
 * Omniauth-Facebook
 
 ## Endpoints Usage
-|      Path     | Method |                                                                                                        Purpose                                                                                                        |
-|:-------------:|:------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|     /event    |   GET  |                                                                                  It returns all events that are register in database                                                                                  |
-|   /event/id   |   GET  |                                                                                It return the event specified by the id in url parameter                                                                               |
-| /event/search |   POST  |                                               In this endpoint you can pass specific parameters that will act as filters. Right now you can pass "name", and "user_id".                                               |
-|   /users/id   |   GET  |                                                                               It return the information about a specific user by its id                                                                               |
-|   /academic   |   GET  |                                                                                It return all the academic events registered in database                                                                               |
-|     /event    | POST   |                                        Event registration. you need to sendo to server, date, name, description, image_url, value, address, contact, type in  the message body                                        |
-|     /auth     | POST   |                                                                    Email registration. Requires email, password, and password_confirmation params.                                                                    |
-|    auth/sign_in   | POST   | Email authentication. Requires email and password as params. This route will return a JSON representation of the User model on successful login along with the access-token and client in the header of the response. |
+| Path | Method | Purpose |
+|:------------------------:|:----------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| /event | GET / POST | It returns all events that are register in database. It can pass some ordering params, right now you can order by 'Date' and 'Value'. You can pass this values in the url, or the body of request. For a decrescent ordering, you must pass the attribute name followed by 'desc' like "?date=desc". The otherway you can do by "?date=asc". In this endpoint it will only return events that are published, and will happen in a future date. |
+| /event/id | GET | It return the event specified by the id in url parameter |
+| /event/add | POST | In this endpoint you can add new events to your database. For default the event will get status "Pendent". An example of the json that you need to pass to server is provide below. |
+| /event/:event_id/publish | GET | In this endpoint you set the published flag of the event to true, and update his status to "Approved" |
+| /event/:event_id/reject | GET | In this endpoint you set the published flag of the event to false, and update his status to "Reject" |
+| /event/search | GET | In this endpoint you can pass specific parameters that will act as filters. Right now you can pass "name", and "user_id", "date" and "published". |
+| /users/id | GET | It return the information about a specific user by its id |
+| /academic | GET | It return all the academic events registered in database |
+| /Cultural | GET | It return all the cultural events registered in database, that will happen in a future date. Right now it will return also the Unpublished ones. |
+| /users/:id | GET | It will return the information about a specific user by its ID. |
+| /event | POST | Event registration. you need to sendo to server, date, name, description, image_url, value, address, contact, type in  the message body |
+| /auth | POST | Email registration. Requires email, password, and password_confirmation params.  |
+| /sign_in | POST | Email authentication. Requires email and password as params. This route will return a JSON representation of the User model on successful login along with the access-token and client in the header of the response. |
 
 ### Token Header Format
 
