@@ -4738,3 +4738,94 @@ Unpermitted parameters: :event, :format
 Completed 200 OK in 73ms (Views: 39.0ms | ActiveRecord: 29.6ms)
 
 
+Started GET "/event" for 127.0.0.1 at 2017-10-02 20:28:47 -0300
+  [1m[35m (121.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#order as */*
+  Parameters: {"event"=>{}}
+Unpermitted parameters: :event, :format
+  Rendering event/order.json.jbuilder
+  [1m[36mEvent Load (18.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."published" = $1 AND (date >= '2017-10-02') LIMIT $2 OFFSET $3[0m  [["published", "t"], ["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mImage Load (57.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 30]]
+  [1m[36mUser Load (23.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mImage Load (0.8ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 31]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 33]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."event_id" = $1[0m  [["event_id", 35]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendered event/order.json.jbuilder (276.6ms)
+Completed 200 OK in 299ms (Views: 172.8ms | ActiveRecord: 145.1ms)
+
+
+Started GET "/users/20" for 127.0.0.1 at 2017-10-02 20:29:56 -0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"20", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering users/show.json.jbuilder
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered users/show.json.jbuilder (6.8ms)
+Completed 200 OK in 55ms (Views: 11.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/event/search" for 127.0.0.1 at 2017-10-02 21:05:22 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/pedrohenique/Factos/Factos_Events/app/controllers/event_controller.rb:47: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+      @events << Event.search params[:name]
+                                    ^):
+  
+app/controllers/event_controller.rb:47: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started POST "/event/search" for 127.0.0.1 at 2017-10-02 21:08:59 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/pedrohenique/Factos/Factos_Events/app/controllers/event_controller.rb:45: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+      @events << Event.search params[:name]
+                                    ^):
+  
+app/controllers/event_controller.rb:45: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started POST "/event/search" for 127.0.0.1 at 2017-10-02 21:09:26 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#search as */*
+  Parameters: {"name"=>"Marie"}
+Can't verify CSRF token authenticity.
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."name" = $1 LIMIT $2[0m  [["name", "Marie"], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.0ms)
+
+
+  
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."name" = $1 LIMIT $2[0m  [["name", "Marie"], ["LIMIT", 11]]
+NoMethodError (undefined method `<<' for #<ActiveRecord::Relation []>):
+  
+app/controllers/event_controller.rb:45:in `search'
+Started POST "/event/search" for 127.0.0.1 at 2017-10-02 21:10:40 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#search as */*
+  Parameters: {"name"=>"Marie"}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 4.5ms)
+
+
+  
+ArgumentError (#<Elasticsearch::Model::Response::Response:0x007f417c224d30 @klass=[PROXY] Event(id: integer, created_at: datetime, updated_at: datetime, name: string, description: text, value: decimal, contact: string, date: datetime, address: string, type: string, user_id: integer, published: boolean, lat: decimal, long: decimal, event_status: integer), @search=#<Elasticsearch::Model::Searching::SearchRequest:0x007f417c226568 @klass=[PROXY] Event(id: integer, created_at: datetime, updated_at: datetime, name: string, description: text, value: decimal, contact: string, date: datetime, address: string, type: string, user_id: integer, published: boolean, lat: decimal, long: decimal, event_status: integer), @options={}, @definition={:index=>"events", :type=>"event", :q=>"Marie"}>> is not an ActiveRecord::Relation):
+  
+app/controllers/event_controller.rb:45:in `search'
+Started POST "/event/search" for 127.0.0.1 at 2017-10-02 21:13:10 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventController#search as */*
+  Parameters: {"name"=>"Marie"}
+Can't verify CSRF token authenticity.
+  Rendering event/search.json.jbuilder
+  Rendered event/search.json.jbuilder (61.3ms)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for "localhost" port 9200)):
+    1: json.array! @events do |event|
+    2:   json.event_id event.id
+    3:   json.name event.name
+    4:   json.description event.description
+  
+app/views/event/search.json.jbuilder:1:in `_app_views_event_search_json_jbuilder___2570006405911530366_70281033976480'
+  [1m[36mEvent Load (27.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]

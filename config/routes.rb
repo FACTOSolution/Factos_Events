@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       post :search
       get '', action: 'order'
+      post '', action: 'order'
     end
     post :add, action: 'create', on: :collection
     get :publish
