@@ -34,7 +34,7 @@ This is a project that aims to manage upgoing events at Universidade Federal do 
 | /users/:id | GET | It will return the information about a specific user by its ID. |
 | /event | POST | Event registration. you need to sendo to server, date, name, description, image_url, value, address, contact, type in  the message body |
 | /auth | POST | Email registration. Requires email, password, and password_confirmation params.  |
-| /sign_in | POST | Email authentication. Requires email and password as params. This route will return a JSON representation of the User model on successful login along with the access-token and client in the header of the response. |
+| auth/sign_in | POST | Email authentication. Requires email and password as params. This route will return a JSON representation of the User model on successful login along with the access-token and client in the header of the response. |
 
 ### Examples Of Returned Data
 
